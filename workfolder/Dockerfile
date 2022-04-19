@@ -3,6 +3,7 @@ FROM ubuntu
 COPY . .
 RUN apt-get update -y && \
     apt install python -y  && \
+    apt install python3-pip -y &&\
     pip install boto3
 WORKDIR /app
 CMD python main.py;
