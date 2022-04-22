@@ -14,3 +14,7 @@ geometry: margin = 2cm
 Se arrivano più gare, la pila è da inserire in un nuovo bucket o esiste un tipo di memoria volatile direttamente nella funzione lambda (forse come layer)?
 
 - Multithreading?
+
+# Passaggio dati da S3 a DynamoDB
+
+- Utilizzo delle pipeline per passare i dati, ma come li formatto nel modo corretto? (Dentro la prima lambda?)<br>[VIDEO](https://www.youtube.com/watch?v=LjTEutvXOQ8)
