@@ -1,10 +1,10 @@
-#tkinter
+# tkinter
 from textwrap import fill
 from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
 from tkinter.messagebox import showinfo
-#requests
+# requests
 import requests
 
 # global
