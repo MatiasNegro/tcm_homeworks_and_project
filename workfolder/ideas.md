@@ -17,4 +17,5 @@ Se arrivano più gare, la pila è da inserire in un nuovo bucket o esiste un tip
 
 # Passaggio dati da S3 a DynamoDB
 
-- Utilizzo delle pipeline per passare i dati, ma come li formatto nel modo corretto? (Dentro la prima lambda?)<br>[VIDEO](https://www.youtube.com/watch?v=LjTEutvXOQ8)
+- Utilizzo delle pipeline per passare i dati, ma come li formatto nel modo corretto? (Dentro la prima lambda?)<br>[VIDEO](https://www.youtube.com/watch?v=LjTEutvXOQ8) --> DEPRECATED, non abbiamo le autorizzazioni ad usare le pipeline. Bisogna usare una funzione lambda con trigger.
+- Inanzitutto bisogna creare una tabella in dynamo che segue il formato corretto delle gare.

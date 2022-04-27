@@ -1,5 +1,8 @@
 <root>
-    <ID>
+    <ID type="number">
         1
+    </ID>
+    <ID type="number">
+        2
     </ID>
 </root>
