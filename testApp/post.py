@@ -1,7 +1,6 @@
 import requests
 
 def sendPost(url, file_url):
-    
     header_file_name = {'file-name': 'ResultList1.xml'}
     file = {'file': open(file_url, 'r')}
     r = requests.post(url, files=file, headers = header_file_name)
