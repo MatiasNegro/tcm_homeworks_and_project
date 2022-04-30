@@ -1,0 +1,7 @@
+Per uploadApp:
+admin
+Admin123!
+
+Per readerApp:
+user
+Username123!
