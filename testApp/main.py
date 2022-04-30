@@ -1,5 +1,4 @@
 # tkinter
-from asyncio.windows_events import NULL
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import showinfo
@@ -9,15 +8,18 @@ from uploadModule import uploadFiles
 def login():
     user = username_textbox.get("1.0", END + '-1c')
     passw = password_textbox.get("1.0", END + '-1c')
-    idToken = getIdToken(user, passw)
-    if(idToken!=NULL):
+    try:
+        idToken = getIdToken(user, passw)
+        showinfo(title="Success", message="Successful login")
         root.destroy()
         uploadFiles(idToken)
-    else:
-        showinfo("Error")
+    except:
+        showinfo(title="Error", message="Incorrect username or password")
 
 # root window
 root = Tk()
+photo = PhotoImage(file="testApp/icon.png")
+root.iconphoto(False, photo)
 root.title('http post request')
 root.geometry('500x200')
 root.resizable(False, False)

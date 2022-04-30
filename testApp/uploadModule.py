@@ -9,67 +9,110 @@ import os
 
 # global
 url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/upload'
+files = []
 
 def uploadFiles(identityToken):
-    # message
+    
     def info(massage):
         showinfo(
             title = 'result',
             message = massage
         )
 
-    # sending 
-    def sendPost(url, file_url):
-        fileName = os.path.basename(file_url)
-        headerComposite = {'accept': 'application/json', 'Authorization' : identityToken, 'file-name' : fileName}
-        file = {'file': open(file_url, 'rb')}
-        r = requests.post(url, files=file, headers = headerComposite)
-        info(r.content)
+    def clearFiles():
+        for f in files:
+            fileIn = open(f, mode="rt")
+            data = fileIn.read()
+            data  = data.replace("\nFLAGSEPARATORCODE","")
+            fileIn.close()
+            fileOut = open(f, mode="wt")
+            fileOut.write(data)
+            fileOut.close()
+        files.clear()
+        labelFileName.configure(text="")
 
     def selectFile():
         filepath = filedialog.askopenfilename()
-        url = url_textbox.get("1.0", END + '-1c')
-        sendPost(url, filepath)
+        files.append(filepath)
+        labelFileName.configure(text=labelFileName.cget("text") + os.path.basename(filepath) + "\n")
+        generateFileSeparator(filepath)
+
+    def generateFileSeparator(filePath):
+        f = open(filePath, mode="a")
+        f.write("\nFLAGSEPARATORCODE")
+        f.close()
+
+    def generateFileHeader():
+        header = {
+            'accept':'application/json', 
+            'Authorization':identityToken,
+            'fileNumber':str(len(files))
+        }
+        i = 0
+        for f in files:
+            tuple = {"filename-"+str(i) : os.path.basename(f)}
+            i += 1
+            header.update(tuple)
+        return header
+
+    def generateFileDict():
+        fileDict = {}
+        i = 0
+        for f in files:
+            tuple = {'file'+str(i) : open(f, 'rb')}
+            i += 1
+            fileDict.update(tuple)
+        fileList = [('file', open(f, 'rb')) for f in files]
+        return fileDict
+
+    # sending 
+    def sendPost():
+        fileHeaders = generateFileHeader()
+        fileDict = generateFileDict()
+        r = requests.post(url, files=fileDict, headers=fileHeaders)
+        info(r.content)
+        clearFiles()
 
     # root window
     root = Tk()
+    photo = PhotoImage(file="testApp/icon.png")
+    root.iconphoto(False, photo)
     root.title('http post request')
-    root.geometry('500x200')
+    root.geometry('500x300')
     root.resizable(False, False)
     frame= Frame(root)
     frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
-
-    # text
-    canvas = Canvas(frame, width=490, height=15)
-    canvas.create_text(12, 10, text="Url", font=("calibri",11))
-    canvas.pack(
-        side='top'
-    )
-    # insert url
-    url_textbox = Text(
-        frame,
-        height = 1,
-        background = "white",
-        foreground = "black",
-        font = ('calibri', 11)
-    )
-    url_textbox.insert(
-        INSERT,
-        'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/upload'
-    )
-    url_textbox.pack(
-        pady=5,
-        fill='x'
-    )
     
     # button to select file
-    button = ttk.Button(
+    buttonAddFile = ttk.Button(
         frame,
-        text='select file and send',
+        text='select file',
         command=selectFile
     )
-    button.pack(
+    buttonAddFile.pack(
         pady=5,
+        ipadx=5,
+        ipady=5,
+        side='top'
+    )
+    # label that changes with the file name selected
+    labelFileName = ttk.Label(
+        frame,
+        text=""
+    )
+    labelFileName.pack(
+        pady=5,
+        ipadx=5,
+        ipady=5,
+        side='top'
+    )
+    # button to send post request
+    buttonSend = ttk.Button(
+        frame,
+        text='Send POST',
+        command=sendPost
+    )
+    buttonSend.pack(
         ipadx=5,
         ipady=5,
         side='top'
