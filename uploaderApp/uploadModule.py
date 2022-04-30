@@ -18,7 +18,7 @@ def uploadFiles(identityToken):
             title = 'result',
             message = massage
         )
-
+    
     def clearFiles():
         for f in files:
             fileIn = open(f, mode="rt")
@@ -30,12 +30,13 @@ def uploadFiles(identityToken):
             fileOut.close()
         files.clear()
         labelFileName.configure(text="")
-
+    
     def selectFile():
         filepath = filedialog.askopenfilename()
-        files.append(filepath)
-        labelFileName.configure(text=labelFileName.cget("text") + os.path.basename(filepath) + "\n")
-        generateFileSeparator(filepath)
+        if(filepath != ''):
+            files.append(filepath)
+            labelFileName.configure(text=labelFileName.cget("text") + os.path.basename(filepath) + "\n")
+            generateFileSeparator(filepath)
 
     def generateFileSeparator(filePath):
         f = open(filePath, mode="a")
@@ -62,20 +63,20 @@ def uploadFiles(identityToken):
             tuple = {'file'+str(i) : open(f, 'rb')}
             i += 1
             fileDict.update(tuple)
-        fileList = [('file', open(f, 'rb')) for f in files]
         return fileDict
 
     # sending 
     def sendPost():
-        fileHeaders = generateFileHeader()
-        fileDict = generateFileDict()
-        r = requests.post(url, files=fileDict, headers=fileHeaders)
-        info(r.content)
-        clearFiles()
+        if(len(files) > 0):
+            fileHeaders = generateFileHeader()
+            fileDict = generateFileDict()
+            r = requests.post(url, files=fileDict, headers=fileHeaders)
+            info(r.content)
+            clearFiles()
 
     # root window
     root = Tk()
-    photo = PhotoImage(file="uploadApp/icon.png")
+    photo = PhotoImage(file="img/icon.png")
     root.iconphoto(False, photo)
     root.title('http post request')
     root.geometry('500x300')

@@ -2,26 +2,28 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import showinfo
+# files
 from idToken import getIdToken
-from readModule import uploadFiles
+from uploadModule import uploadFiles
     
 def login():
     user = username_textbox.get("1.0", END + '-1c')
     passw = password_textbox.get("1.0", END + '-1c')
     try:
         idToken = getIdToken(user, passw)
-        showinfo(title="Success", message="Successful login")
         root.destroy()
         uploadFiles(idToken)
     except:
         showinfo(title="Error", message="Incorrect username or password")
+        username_textbox.delete("1.0", END)
+        password_textbox.delete("1.0", END)
 
 # root window
 root = Tk()
-photo = PhotoImage(file="uploadApp/icon.png")
+photo = PhotoImage(file="img/icon.png")
 root.iconphoto(False, photo)
 root.title('http post request')
-root.geometry('500x200')
+root.geometry('300x200')
 root.resizable(False, False)
 frame= Frame(root)
 frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
