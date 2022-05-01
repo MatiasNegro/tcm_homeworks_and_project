@@ -55,5 +55,3 @@ tree = ElementTree(fromstring(file_string))
 root = tree.getroot()
 xmldict = XmlDictConfig(root)
 print(json.dumps(xmldict))
-
-
