@@ -1,5 +1,4 @@
 # tkinter
-from ctypes import alignment
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import showinfo
@@ -7,7 +6,7 @@ from tkinter.messagebox import showinfo
 import requests
 
 # global
-url = 'https://75lk3855vc.execute-api.us-east-1.amazonaws.com/default/download'
+url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/download'
 
 def readerFiles(identityToken):
     def info(massage):
