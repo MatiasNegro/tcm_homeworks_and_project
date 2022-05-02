@@ -1,0 +1,181 @@
+{
+    "ResultList": {
+        "Event": {
+            "Name": "",
+            "StartTime": {
+                "Date": "",
+                "Time": ""
+            },
+            "EndTime": {
+                "Date": "",
+                "Time": ""
+            }
+        },
+        "ClassResult": {
+            "Class": {
+                "Id": "",
+                "Name": ""
+            },
+            "Course": {
+                "Length": "",
+                "Climb": ""
+            },
+            "PersonResult": [{
+                    "Person": {
+                        "Id": "",
+                        "Name": {
+                            "Family": "",
+                            "Given": ""
+                        }
+                    },
+                    "Organisation": {
+                        "Id": "",
+                        "Name": "",
+                        "Country": {
+                            "_code": "GBR"
+                        }
+                    },
+                    "Result": {
+                        "BibNumber": "",
+                        "StartTime": "",
+                        "FinishTime": "",
+                        "Time": "",
+                        "TimeBehind": "",
+                        "Position": "",
+                        "Status": "",
+                        "Course": {
+                            "Id": "",
+                            "Name": "",
+                            "Length": "",
+                            "Climb": ""
+                        },
+                        "SplitTime": [{
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            }
+                        ],
+                        "Route": "",
+                        "ControlCard": "",
+                        "AssignedFee": {
+                            "Fee": {
+                                "Id": "",
+                                "Name": "",
+                                "Amount": {
+                                    "_currency": "EUR"
+                                },
+                                "TaxableAmount": {
+                                    "_currency": "EUR"
+                                }
+                            }
+                        },
+                        "ServiceRequest": {
+                            "Service": {
+                                "Id": "",
+                                "Name": ""
+                            },
+                            "RequestedQuantity": "",
+                            "AssignedFee": {
+                                "Fee": {
+                                    "Id": "",
+                                    "Name": "",
+                                    "Amount": {
+                                        "_currency": "EUR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Person": {
+                        "Id": "",
+                        "Name": {
+                            "Family": "",
+                            "Given": ""
+                        }
+                    },
+                    "Organisation": {
+                        "Id": "",
+                        "Name": "",
+                        "Country": {
+                            "_code": "GBR"
+                        }
+                    },
+                    "Result": {
+                        "BibNumber": "",
+                        "StartTime": "",
+                        "FinishTime": "",
+                        "Time": "",
+                        "Status": "",
+                        "Course": {
+                            "Id": "",
+                            "Name": "",
+                            "Length": "",
+                            "Climb": ""
+                        },
+                        "SplitTime": [{
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": ""
+                            },
+                            {
+                                "ControlCode": "",
+                                "_status": "Missing"
+                            },
+                            {
+                                "ControlCode": "",
+                                "_status": "Missing"
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": "",
+                                "_status": "Additional"
+                            },
+                            {
+                                "ControlCode": "",
+                                "Time": "",
+                                "_status": "Additional"
+                            }
+                        ],
+                        "ControlCard": "",
+                        "AssignedFee": {
+                            "Fee": {
+                                "Id": "",
+                                "Name": "",
+                                "Amount": {
+                                    "_currency": "EUR"
+                                },
+                                "TaxableAmount": {
+                                    "_currency": "EUR"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

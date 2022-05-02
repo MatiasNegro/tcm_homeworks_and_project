@@ -1,0 +1,63 @@
+<Result>
+    <BibNumber></BibNumber>
+    <StartTime></StartTime>
+    <FinishTime></FinishTime>
+    <Time></Time>
+    <TimeBehind></TimeBehind>
+    <Position></Position>
+    <Status></Status>
+    <Course>
+      <Id></Id>
+      <Name></Name>
+      <Length></Length>
+      <Climb></Climb>
+    </Course>
+    <SplitTime>
+      <ControlCode></ControlCode>
+      <Time></Time>
+    </SplitTime>
+    <SplitTime>
+      <ControlCode></ControlCode>
+      <Time></Time>
+    </SplitTime>
+    <SplitTime>
+      <ControlCode></ControlCode>
+      <Time></Time>
+    </SplitTime>
+    <SplitTime>
+      <ControlCode></ControlCode>
+      <Time></Time>
+    </SplitTime>
+    <SplitTime>
+      <ControlCode></ControlCode>
+      <Time></Time>
+    </SplitTime>
+    <Route></Route>
+    <ControlCard></ControlCard>
+    <!-- competitor fees defined on general level; for example entry fees -->
+    <!-- this competitor has been assigned one fee -->
+    <AssignedFee>
+      <Fee>
+        <Id></Id>
+        <Name></Name>
+        <Amount currency="EUR"></Amount>
+        <TaxableAmount currency="EUR"></TaxableAmount>
+      </Fee>
+    </AssignedFee>
+    <!-- ordered services and fees related to these; for example rental card fee -->
+    <!-- this competitor has requested a rental card -->
+    <ServiceRequest>
+      <Service>
+        <Id></Id>
+        <Name></Name>
+      </Service>
+      <RequestedQuantity></RequestedQuantity>
+      <AssignedFee>
+        <Fee>
+          <Id></Id>
+          <Name></Name>
+          <Amount currency="EUR"></Amount>
+        </Fee>
+      </AssignedFee>
+    </ServiceRequest>
+  </Result>

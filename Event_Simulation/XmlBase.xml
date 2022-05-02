@@ -1,0 +1,165 @@
+<ResultList>
+  <Event>
+    <Name></Name>
+    <StartTime>
+      <Date></Date>
+      <Time></Time>
+    </StartTime>
+    <EndTime>
+      <Date></Date>
+      <Time></Time>
+    </EndTime>
+  </Event>
+  <ClassResult>
+    <Class>
+      <Id></Id>
+      <Name></Name>
+    </Class>
+    <Course>
+      <Length></Length>
+      <Climb></Climb>
+    </Course>
+    <PersonResult>
+      <Person>
+        <Id></Id>
+        <Name>
+          <Family></Family>
+          <Given></Given>
+        </Name>
+      </Person>
+      <Organisation>
+        <Id></Id>
+        <Name></Name>
+        <Country code="GBR"></Country>
+      </Organisation>
+      <Result>
+        <BibNumber></BibNumber>
+        <StartTime></StartTime>
+        <FinishTime></FinishTime>
+        <Time></Time>
+        <TimeBehind></TimeBehind>
+        <Position></Position>
+        <Status></Status>
+        <Course>
+          <Id></Id>
+          <Name></Name>
+          <Length></Length>
+          <Climb></Climb>
+        </Course>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <Route></Route>
+        <ControlCard></ControlCard>
+        <!-- competitor fees defined on general level; for example entry fees -->
+        <!-- this competitor has been assigned one fee -->
+        <AssignedFee>
+          <Fee>
+            <Id></Id>
+            <Name></Name>
+            <Amount currency="EUR"></Amount>
+            <TaxableAmount currency="EUR"></TaxableAmount>
+          </Fee>
+        </AssignedFee>
+        <!-- ordered services and fees related to these; for example rental card fee -->
+        <!-- this competitor has requested a rental card -->
+        <ServiceRequest>
+          <Service>
+            <Id></Id>
+            <Name></Name>
+          </Service>
+          <RequestedQuantity></RequestedQuantity>
+          <AssignedFee>
+            <Fee>
+              <Id></Id>
+              <Name></Name>
+              <Amount currency="EUR"></Amount>
+            </Fee>
+          </AssignedFee>
+        </ServiceRequest>
+      </Result>
+    </PersonResult>
+    <!-- example of a competitor that has mispunched, in this case running butterfly loops in the wrong order (the course's control code sequence is S-31-33-31-32-31-F, but the competitor punched S-31-32-31-33-31-F) -->
+    <PersonResult>
+      <Person>
+        <Id></Id>
+        <Name>
+          <Family></Family>
+          <Given></Given>
+        </Name>
+      </Person>
+      <Organisation>
+        <Id></Id>
+        <Name></Name>
+        <Country code="GBR"></Country>
+      </Organisation>
+      <Result>
+        <BibNumber></BibNumber>
+        <StartTime></StartTime>
+        <!-- the finish time is included even if the competitor has not completed his course -->
+        <FinishTime></FinishTime>
+        <!-- the time is included even if the competitor has not completed his course -->
+        <Time></Time>
+        <Status></Status>
+        <Course>
+          <Id></Id>
+          <Name></Name>
+          <Length></Length>
+          <Climb></Climb>
+        </Course>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime>
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime status="Missing">
+          <ControlCode></ControlCode>
+        </SplitTime>
+        <SplitTime status="Missing">
+          <ControlCode></ControlCode>
+        </SplitTime>
+        <SplitTime status="Additional">
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <SplitTime status="Additional">
+          <ControlCode></ControlCode>
+          <Time></Time>
+        </SplitTime>
+        <ControlCard></ControlCard>
+        <AssignedFee>
+          <Fee>
+            <Id></Id>
+            <Name></Name>
+            <Amount currency="EUR"></Amount>
+            <TaxableAmount currency="EUR"></TaxableAmount>
+          </Fee>
+        </AssignedFee>
+      </Result>
+    </PersonResult>
+  </ClassResult>
+</ResultList>
