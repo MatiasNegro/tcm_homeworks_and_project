@@ -2,6 +2,8 @@ import logging
 import base64
 import boto3
 import os
+import xml.etree.ElementTree as ET
+import re
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -56,6 +58,13 @@ def lambda_handler(event, context):
         data = file.split('\r\n\r\n')
         data.pop(0)
         content = data[0]
+        
+        root = ET.fromstring(content)
+        root.attrib.clear()
+        xmlstr = ET.tostring(root, encoding='utf8', method='xml')
+        xmlstr = xmlstr.decode("utf8")
+        content = re.sub(' xmlns:ns0="[^"]+"', '', xmlstr, count=1)
+        content = content.replace('ns0:', '')
         
         try:
             s3_response = s3_client.put_object(Bucket=BUCKET_NAME, Key=(prefix+file_name), Body=content)
