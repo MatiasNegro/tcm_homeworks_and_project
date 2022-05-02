@@ -40,10 +40,10 @@ def readerFiles(identityToken):
                 r = requests.get(url, headers=headers)
                 file = r.content
                 file = file.decode('utf-8')
-                if(file == '404'):
+                if('ResponseMetadata' in file):
                     info('Error 404: file not found.')
                 else: 
-                    destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c')
+                    destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c') + '.json'
                     f = open(destinationUrl, 'w+')
                     f.write(file)
                     f.close()
