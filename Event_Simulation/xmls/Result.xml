@@ -6,32 +6,6 @@
     <TimeBehind></TimeBehind>
     <Position></Position>
     <Status></Status>
-    <Course>
-      <Id></Id>
-      <Name></Name>
-      <Length></Length>
-      <Climb></Climb>
-    </Course>
-    <SplitTime>
-      <ControlCode></ControlCode>
-      <Time></Time>
-    </SplitTime>
-    <SplitTime>
-      <ControlCode></ControlCode>
-      <Time></Time>
-    </SplitTime>
-    <SplitTime>
-      <ControlCode></ControlCode>
-      <Time></Time>
-    </SplitTime>
-    <SplitTime>
-      <ControlCode></ControlCode>
-      <Time></Time>
-    </SplitTime>
-    <SplitTime>
-      <ControlCode></ControlCode>
-      <Time></Time>
-    </SplitTime>
     <Route></Route>
     <ControlCard></ControlCard>
     <!-- competitor fees defined on general level; for example entry fees -->
