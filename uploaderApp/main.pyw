@@ -20,7 +20,7 @@ def login():
 
 # root window
 root = Tk()
-photo = PhotoImage(file="img/icon.png")
+photo = PhotoImage(file="uploaderApp/img/icon.png")
 root.iconphoto(False, photo)
 root.title('http post request')
 root.geometry('300x200')
