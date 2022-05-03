@@ -13,6 +13,7 @@ import Simulator
 # global
 url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/upload'
 files = []
+flagClear = True
 
 def uploadFiles(identityToken):
     
@@ -27,17 +28,20 @@ def uploadFiles(identityToken):
             os.remove(f)
         files.clear()
         labelFileName.configure(text="")
+        global flagClear
+        flagClear = True
     
     def selectFile():
-        nSim = number_generation.get("1.0", END + '-1c')
-        nSim = int(nSim)
-        Simulator.simulation(nSim)
-        for f in os.listdir('Result_Of_Simulation'):
-            path = os.path.join(os.curdir + '/Result_Of_Simulation', f)
-            files.append(path)
-            labelFileName.configure(text=labelFileName.cget("text") + f + "\n")
-            generateFileSeparator(path)
-        sendPost()
+        if(flagClear):
+            nSim = number_generation.get("1.0", END + '-1c')
+            nSim = int(nSim)
+            Simulator.simulation(nSim)
+            for f in os.listdir('Result_Of_Simulation'):
+                path = os.path.join(os.curdir + '/Result_Of_Simulation', f)
+                files.append(path)
+                labelFileName.configure(text=labelFileName.cget("text") + f + "\n")
+                generateFileSeparator(path)
+            sendPost()
 
     def generateFileSeparator(filePath):
         f = open(filePath, mode="a")
@@ -72,20 +76,22 @@ def uploadFiles(identityToken):
         fileDict = generateFileDict()
         r = requests.post(url, files=fileDict, headers=fileHeaders)
         info(r.content)
+        global flagClear
+        flagClear = False
 
     # root window
     root = Tk()
     photo = PhotoImage(file="img/icon.png")
     root.iconphoto(False, photo)
     root.title('http post request')
-    root.geometry('500x300')
-    root.resizable(False, False)
+    root.geometry('800x500')
+    root.resizable(True, True)
     frame= Frame(root)
     frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
     
     # text
-    canvas = Canvas(frame, width=490, height=15)
-    canvas.create_text(117, 7, text="Inserire numero di file da generare:", font=("calibri", 11), justify="center")
+    canvas = Canvas(frame, width=750, height=15)
+    canvas.create_text(300, 7, text="Inserire numero di file da generare, dopo la generazione premere 'Clear files' per ripetere:", font=("calibri", 11), justify="center")
     canvas.pack(
         side='top'
     )
