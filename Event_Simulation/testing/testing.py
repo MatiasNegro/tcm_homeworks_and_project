@@ -1,3 +1,4 @@
+
 from unicodedata import name
 import xml.etree.ElementTree as ET
 import xml.etree as xe
@@ -8,8 +9,8 @@ import string
 import datetime
 import names
 import randomtimestamp
-from sqlalchemy import null
 import country_code as cd
+import copy
 
 #Base xmls
 start_xml = ET.fromstring("<ResultList></ResultList>")
@@ -53,52 +54,56 @@ def main():
     for i in range(0,num_events):
         
         #Event generation
-        event = event_base
+        event = copy.deepcopy(event_base)
         event.find("Name").text = id_generator()
         event.find("StartTime").find("Date").text = str(date_sim())[0:9]
-        event.find("StartTime").find("Time").text = str(date_sim())[10:]
+        event.find("StartTime").find("Time").text = str(randomtimestamp.randomtimestamp())[10:]
         event.find("EndTime").find("Date").text = str(date_sim())[0:9]
-        event.find("EndTime").find("Time").text = str(date_sim())[10:]
+        event.find("EndTime").find("Time").text = str(randomtimestamp.randomtimestamp())[10:]
 
         #Class generation
-        class_ev = class_base
+        class_ev = copy.deepcopy(class_base)
         class_ev.find("Id").text = id_generator()
         class_ev.find("Name").text = id_generator()
         
         #Course generation
-        course = course_base
+        course = copy.deepcopy(course_base)
         course.find("Id").text = id_generator()
         course.find("Name").text = id_generator()
         course.find("Length").text = str(ran.randint(0,2000))
         course.find("Climb").text = str(ran.randint(0,1000))
 
-        course_first = course
+        course_first = copy.deepcopy(course_base)
         c_f_root = course_first.getroot()
         c_f_root.remove(course_first.find("Id"))
         c_f_root.remove(course_first.find("Name"))
+        c_f_root.find("Length").text = copy.deepcopy(course.find("Length").text)
+        c_f_root.find("Climb").text =copy.deepcopy(course.find("Climb").text)
+
 
         #PersonResult generation
-        p_r_b = person_result_xml
+        p_r_b = copy.deepcopy(person_result_xml)
         p_r_l = []
-        for i in range(0,ran.randint(1,5)):
-            p_r = p_r_b
+        for i in range(0, ran.randint(1,5)):
+            p_r = copy.deepcopy(p_r_b)
+            
 
-            person = person_base
+            person = copy.deepcopy(person_base)
             person.find("Id").text = id_generator()
             person.find("Name").find("Family").text = names.get_last_name()
             person.find("Name").find("Given").text = names.get_first_name()
 
             #Generating Organisation
-            organisation = organisation_base
+            organisation = copy.deepcopy(organisation_base)
             organisation.find("Id").text = id_generator()
             organisation.find("Name").text = id_generator()
             organisation.find("Country").text = cd.get_country()[0]
 
             #Resut generation
-            result = result_base
+            result = copy.deepcopy(result_base)
             result.find("BibNumber").text = str(ran.randint(0,99))
             result.find("StartTime").text = event.find("StartTime").find("Date").text
-            result.find("FinishTime").text = str(date_sim())[10:]
+            result.find("FinishTime").text = str(randomtimestamp.randomtimestamp())[10:]
             result.find("Time").text = str(ran.randint(0,100))
             result.find("TimeBehind").text = str(ran.randint(0,100))
             result.find("Position").text = str(i)
@@ -106,58 +111,73 @@ def main():
 
             #SplitTimes generation
             split_time_list = []
-            for j in range(1,5):
-                split = split_time_base
+            for j in range(0,5):
+                split = copy.deepcopy(split_time_base)
                 split.find("ControlCode").text = id_generator()
-                split.find("Time").text = str(date_sim())[10:]
+                split.find("Time").text = str(randomtimestamp.randomtimestamp())[10:]
                 split_time_list.append(split)
+             
 
             #Route generation
-            route = route_base
+            route = copy.deepcopy(route_base)
             route.text = id_generator()
             #ControlCard generation
-            control_card = control_card_base
+            control_card = copy.deepcopy(control_card_base)
             control_card.text = str(ran.randint(10000,100000))
 
             #AssignedFee generation
-            assigned_fee = assigned_fee_base
+            assigned_fee = copy.deepcopy(assigned_fee_base)
             assigned_fee.find("Fee").find("Id").text = id_generator()
             assigned_fee.find("Fee").find("Name").text = id_generator()
             assigned_fee.find("Fee").find("Amount").text = str(ran.randint(10,1000))
             assigned_fee.find("Fee").find("TaxableAmount").text = str(ran.randint(10,100))
 
             #ServiceRequest generation
-            service_request = service_request_base
+            service_request = copy.deepcopy(service_request_base)
             service_request.find("Service").find("Id").text = id_generator()
             service_request.find("Service").find("Name").text = id_generator()
             service_request.find("RequestedQuantity").text = str(ran.randint(0,10))
             service_request.find("AssignedFee").find("Fee").find("Id").text = id_generator()
             service_request.find("AssignedFee").find("Fee").find("Name").text = id_generator()
             service_request.find("AssignedFee").find("Fee").find("Amount").text = str(ran.randint(10,100))
-
             
-            p_r.insert(organisation)
-            p_r.insert(result)
-            p_r.insert(course)
+            
+            
+            p_r.append(person.getroot()) 
+            p_r.append(organisation.getroot())
+            result = result.getroot()
+            result.append(course.getroot())
+        
             for i in split_time_list:
-                p_r.insert(i)
-            p_r.append(route)
-            p_r.append(control_card)
-            p_r.append(assigned_fee)
-            p_r.append(service_request)
+                result.append(i.getroot())
+                '''
+                print("----")
+                print(i.find("ControlCode").text)
+                print("----")
+                '''
+                
+            result.append(route.getroot())
+            result.append(control_card.getroot())
+            result.append(assigned_fee.getroot())
+            result.append(service_request.getroot())
+            p_r.append(result)
             p_r_l.append(p_r)
         
-        c_r = class_result_xml
-        c_r.append(class_ev)
-        c_r.append(course_first)
+        c_r = copy.deepcopy(class_result_xml)
+        c_r.append(class_ev.getroot())
+        c_r.append(course_first.getroot())
+
         for i in p_r_l:
             c_r.append(i)
-        f_r = start_xml
-        f_r.append(event)
+        f_r = copy.deepcopy(start_xml)
+        f_r.append(event.getroot())
         f_r.append(c_r)
         f_r_l.append(f_r)
 
-    print(f_r_l[0])
-        
-
+    
+    for i in f_r_l:
+        el_tree = ET.ElementTree(i)
+        name = el_tree.find("Event").find("Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
+        el_tree.write('Event_Simulation/' + name, encoding = 'utf-8')
+  
 main()

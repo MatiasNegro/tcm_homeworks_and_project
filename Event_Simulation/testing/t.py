@@ -1,5 +1,6 @@
-import xml.etree.ElementTree as ET
+a = [1, 2, 3]
+b = a
+b[2] = 11
 
-xml_f = ET.parse("Event_Simulation/xmls/Event.xml")
-
-print(xml_f.find("StartTime").find("Date").text)
+print("list a:", a)
+print("list b:", b)
