@@ -1,0 +1,257 @@
+<ResultList><Event>
+    <Name>BSNoIz</Name>
+    <StartTime>
+        <Date>2020-01-0</Date>
+        <Time> 03:01:40</Time>
+    </StartTime>
+    <EndTime>
+        <Date>2020-01-1</Date>
+        <Time> 15:00:07</Time>
+    </EndTime>
+</Event><ClassResult><Class>
+    <Id>TvBomX</Id>
+    <Name>akMhsi</Name>
+</Class><Course>
+    <Length>742</Length>
+    <Climb>560</Climb>
+</Course><PersonResult><Person>
+    <Id>SKEHas</Id>
+    <Name>
+        <Family>Bernier</Family>
+        <Given>Dolores</Given>
+    </Name>
+</Person><Organisation>
+    <Id>GukVYK</Id>
+    <Name>UkCall</Name>
+    <Country code="GBR">MX</Country>
+</Organisation><Result>
+    <BibNumber>38</BibNumber>
+    <StartTime>2020-01-0</StartTime>
+    <FinishTime> 22:43:40</FinishTime>
+    <Time>60</Time>
+    <TimeBehind>31</TimeBehind>
+    <Position>0</Position>
+    <Status>OK</Status>
+    <Route />
+    <ControlCard />
+<Course>
+    <Id>pYjsQb</Id>
+    <Name>ggtSbD</Name>
+    <Length>742</Length>
+    <Climb>560</Climb>
+</Course><SplitTime>
+    <ControlCode>eKuXjT</ControlCode>
+    <Time> 06:55:21</Time>
+</SplitTime><SplitTime>
+    <ControlCode>LLwaEI</ControlCode>
+    <Time> 10:52:08</Time>
+</SplitTime><SplitTime>
+    <ControlCode>hZNLdv</ControlCode>
+    <Time> 17:31:01</Time>
+</SplitTime><SplitTime>
+    <ControlCode>MlHjty</ControlCode>
+    <Time> 15:06:36</Time>
+</SplitTime><SplitTime>
+    <ControlCode>kASidD</ControlCode>
+    <Time> 15:51:16</Time>
+</SplitTime><Route /><ControlCard /><AssignedFee>
+    <Fee>
+        <Id>sRsVtZ</Id>
+        <Name>TCQbZJ</Name>
+        <Amount currency="EUR">706</Amount>
+        <TaxableAmount currency="EUR">17</TaxableAmount>
+    </Fee>
+</AssignedFee><ServiceRequest>
+    <Service>
+        <Id>IvryFh</Id>
+        <Name>iDwUMB</Name>
+    </Service>
+    <RequestedQuantity>3</RequestedQuantity>
+    <AssignedFee>
+        <Fee>
+            <Id>fKrJKD</Id>
+            <Name>uUZeAv</Name>
+            <Amount currency="EUR">99</Amount>
+        </Fee>
+    </AssignedFee>
+</ServiceRequest></Result></PersonResult><PersonResult><Person>
+    <Id>ghdAKc</Id>
+    <Name>
+        <Family>Dowdy</Family>
+        <Given>James</Given>
+    </Name>
+</Person><Organisation>
+    <Id>jaiqtu</Id>
+    <Name>Pbyzmh</Name>
+    <Country code="GBR">MC</Country>
+</Organisation><Result>
+    <BibNumber>21</BibNumber>
+    <StartTime>2020-01-0</StartTime>
+    <FinishTime> 07:07:24</FinishTime>
+    <Time>93</Time>
+    <TimeBehind>56</TimeBehind>
+    <Position>1</Position>
+    <Status>OK</Status>
+    <Route />
+    <ControlCard />
+<Course>
+    <Id>pYjsQb</Id>
+    <Name>ggtSbD</Name>
+    <Length>742</Length>
+    <Climb>560</Climb>
+</Course><SplitTime>
+    <ControlCode>WTnxJL</ControlCode>
+    <Time> 23:57:20</Time>
+</SplitTime><SplitTime>
+    <ControlCode>fPQxbb</ControlCode>
+    <Time> 12:35:36</Time>
+</SplitTime><SplitTime>
+    <ControlCode>dMPheX</ControlCode>
+    <Time> 19:12:29</Time>
+</SplitTime><SplitTime>
+    <ControlCode>mIZLok</ControlCode>
+    <Time> 18:34:45</Time>
+</SplitTime><SplitTime>
+    <ControlCode>GCpnIK</ControlCode>
+    <Time> 02:22:55</Time>
+</SplitTime><Route /><ControlCard /><AssignedFee>
+    <Fee>
+        <Id>RkqAIt</Id>
+        <Name>tRpmoA</Name>
+        <Amount currency="EUR">499</Amount>
+        <TaxableAmount currency="EUR">96</TaxableAmount>
+    </Fee>
+</AssignedFee><ServiceRequest>
+    <Service>
+        <Id>ZjbVai</Id>
+        <Name>jUbjtZ</Name>
+    </Service>
+    <RequestedQuantity>8</RequestedQuantity>
+    <AssignedFee>
+        <Fee>
+            <Id>FPDFht</Id>
+            <Name>NTvNiR</Name>
+            <Amount currency="EUR">77</Amount>
+        </Fee>
+    </AssignedFee>
+</ServiceRequest></Result></PersonResult><PersonResult><Person>
+    <Id>ihKLdv</Id>
+    <Name>
+        <Family>Williams</Family>
+        <Given>William</Given>
+    </Name>
+</Person><Organisation>
+    <Id>WQXnoL</Id>
+    <Name>eqyIwT</Name>
+    <Country code="GBR">TD</Country>
+</Organisation><Result>
+    <BibNumber>34</BibNumber>
+    <StartTime>2020-01-0</StartTime>
+    <FinishTime> 17:00:11</FinishTime>
+    <Time>40</Time>
+    <TimeBehind>42</TimeBehind>
+    <Position>2</Position>
+    <Status>OK</Status>
+    <Route />
+    <ControlCard />
+<Course>
+    <Id>pYjsQb</Id>
+    <Name>ggtSbD</Name>
+    <Length>742</Length>
+    <Climb>560</Climb>
+</Course><SplitTime>
+    <ControlCode>svIOwc</ControlCode>
+    <Time> 13:48:38</Time>
+</SplitTime><SplitTime>
+    <ControlCode>UgwWab</ControlCode>
+    <Time> 06:07:29</Time>
+</SplitTime><SplitTime>
+    <ControlCode>jZFgvG</ControlCode>
+    <Time> 13:23:17</Time>
+</SplitTime><SplitTime>
+    <ControlCode>WYCFqg</ControlCode>
+    <Time> 01:05:05</Time>
+</SplitTime><SplitTime>
+    <ControlCode>mGgKVU</ControlCode>
+    <Time> 19:46:42</Time>
+</SplitTime><Route /><ControlCard /><AssignedFee>
+    <Fee>
+        <Id>xMnmkf</Id>
+        <Name>NKJQck</Name>
+        <Amount currency="EUR">415</Amount>
+        <TaxableAmount currency="EUR">92</TaxableAmount>
+    </Fee>
+</AssignedFee><ServiceRequest>
+    <Service>
+        <Id>ykgagw</Id>
+        <Name>uekqIr</Name>
+    </Service>
+    <RequestedQuantity>10</RequestedQuantity>
+    <AssignedFee>
+        <Fee>
+            <Id>nMpxEv</Id>
+            <Name>NFLCEU</Name>
+            <Amount currency="EUR">52</Amount>
+        </Fee>
+    </AssignedFee>
+</ServiceRequest></Result></PersonResult><PersonResult><Person>
+    <Id>znfOps</Id>
+    <Name>
+        <Family>Evans</Family>
+        <Given>Francis</Given>
+    </Name>
+</Person><Organisation>
+    <Id>gsdXCD</Id>
+    <Name>xTviPN</Name>
+    <Country code="GBR">GA</Country>
+</Organisation><Result>
+    <BibNumber>2</BibNumber>
+    <StartTime>2020-01-0</StartTime>
+    <FinishTime> 19:34:01</FinishTime>
+    <Time>72</Time>
+    <TimeBehind>26</TimeBehind>
+    <Position>3</Position>
+    <Status>OK</Status>
+    <Route />
+    <ControlCard />
+<Course>
+    <Id>pYjsQb</Id>
+    <Name>ggtSbD</Name>
+    <Length>742</Length>
+    <Climb>560</Climb>
+</Course><SplitTime>
+    <ControlCode>yMPwlS</ControlCode>
+    <Time> 21:42:45</Time>
+</SplitTime><SplitTime>
+    <ControlCode>NeuojG</ControlCode>
+    <Time> 12:10:14</Time>
+</SplitTime><SplitTime>
+    <ControlCode>rJdDJa</ControlCode>
+    <Time> 07:41:08</Time>
+</SplitTime><SplitTime>
+    <ControlCode>VyXerr</ControlCode>
+    <Time> 21:26:14</Time>
+</SplitTime><SplitTime>
+    <ControlCode>wpvkoc</ControlCode>
+    <Time> 12:03:28</Time>
+</SplitTime><Route /><ControlCard /><AssignedFee>
+    <Fee>
+        <Id>tXMovM</Id>
+        <Name>eByEUv</Name>
+        <Amount currency="EUR">557</Amount>
+        <TaxableAmount currency="EUR">39</TaxableAmount>
+    </Fee>
+</AssignedFee><ServiceRequest>
+    <Service>
+        <Id>GOPbgi</Id>
+        <Name>OBPpjq</Name>
+    </Service>
+    <RequestedQuantity>7</RequestedQuantity>
+    <AssignedFee>
+        <Fee>
+            <Id>BARtCN</Id>
+            <Name>Vmhdba</Name>
+            <Amount currency="EUR">21</Amount>
+        </Fee>
+    </AssignedFee>
+</ServiceRequest></Result></PersonResult></ClassResult></ResultList>
