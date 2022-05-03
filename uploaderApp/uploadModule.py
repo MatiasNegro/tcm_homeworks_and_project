@@ -1,4 +1,5 @@
 # tkinter
+from ctypes import alignment
 from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
@@ -23,13 +24,7 @@ def uploadFiles(identityToken):
     
     def clearFiles():
         for f in files:
-            fileIn = open(f, mode="rt")
-            data = fileIn.read()
-            data  = data.replace("\nFLAGSEPARATORCODE","")
-            fileIn.close()
-            fileOut = open(f, mode="wt")
-            fileOut.write(data)
-            fileOut.close()
+            os.remove(f)
         files.clear()
         labelFileName.configure(text="")
     
@@ -42,6 +37,7 @@ def uploadFiles(identityToken):
             files.append(path)
             labelFileName.configure(text=labelFileName.cget("text") + f + "\n")
             generateFileSeparator(path)
+        sendPost()
 
     def generateFileSeparator(filePath):
         f = open(filePath, mode="a")
@@ -72,12 +68,10 @@ def uploadFiles(identityToken):
 
     # sending 
     def sendPost():
-        if(len(files) > 0):
-            fileHeaders = generateFileHeader()
-            fileDict = generateFileDict()
-            r = requests.post(url, files=fileDict, headers=fileHeaders)
-            info(r.content)
-            clearFiles()
+        fileHeaders = generateFileHeader()
+        fileDict = generateFileDict()
+        r = requests.post(url, files=fileDict, headers=fileHeaders)
+        info(r.content)
 
     # root window
     root = Tk()
@@ -89,6 +83,12 @@ def uploadFiles(identityToken):
     frame= Frame(root)
     frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
     
+    # text
+    canvas = Canvas(frame, width=490, height=15)
+    canvas.create_text(117, 7, text="Inserire numero di file da generare:", font=("calibri", 11), justify="center")
+    canvas.pack(
+        side='top'
+    )
     # text for number of files
     number_generation = Text(
     frame,
@@ -101,11 +101,10 @@ def uploadFiles(identityToken):
         pady=5,
         fill='x'
     )
-
     # button to select file
     buttonAddFile = ttk.Button(
         frame,
-        text='select file',
+        text='Generate files and send',
         command=selectFile
     )
     buttonAddFile.pack(
@@ -125,16 +124,16 @@ def uploadFiles(identityToken):
         ipady=5,
         side='top'
     )
-    # button to send post request
-    buttonSend = ttk.Button(
+    buttonDeleteFile = ttk.Button(
         frame,
-        text='Send POST',
-        command=sendPost
+        text='Clear files',
+        command=clearFiles
     )
-    buttonSend.pack(
+    buttonDeleteFile.pack(
+        pady=5,
         ipadx=5,
         ipady=5,
         side='top'
     )
-
+        
     root.mainloop()
