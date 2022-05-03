@@ -1,4 +1,3 @@
-
 from unicodedata import name
 import xml.etree.ElementTree as ET
 import xml.etree as xe
@@ -150,11 +149,6 @@ def main():
         
             for i in split_time_list:
                 result.append(i.getroot())
-                '''
-                print("----")
-                print(i.find("ControlCode").text)
-                print("----")
-                '''
                 
             result.append(route.getroot())
             result.append(control_card.getroot())
