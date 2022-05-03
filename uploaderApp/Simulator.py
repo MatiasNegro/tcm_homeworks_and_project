@@ -44,13 +44,11 @@ def id_generator(size=ran.randint(5,10), chars=string.ascii_uppercase + string.a
     return ''.join(ran.choice(chars) for _ in range(size))
 
 
-def main():
-    
-    num_events = input("Number of events to simulate: ")
-    num_events = int(num_events)
+def simulation(num):
+
     f_r_l = []
 
-    for i in range(0,num_events):
+    for i in range(0,num):
         
         #Event generation
         event = copy.deepcopy(event_base)
@@ -174,4 +172,3 @@ def main():
         name = el_tree.find("Event").find("Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
         el_tree.write('Result_Of_Simulation/' + name, encoding = 'utf-8')
   
-main()

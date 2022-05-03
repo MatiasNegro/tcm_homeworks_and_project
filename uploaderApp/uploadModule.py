@@ -6,6 +6,8 @@ from tkinter.messagebox import showinfo
 # requests
 import requests
 import os
+# files
+import Simulator
 
 # global
 url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/upload'
@@ -32,11 +34,14 @@ def uploadFiles(identityToken):
         labelFileName.configure(text="")
     
     def selectFile():
-        filepath = filedialog.askopenfilename()
-        if(filepath != ''):
-            files.append(filepath)
-            labelFileName.configure(text=labelFileName.cget("text") + os.path.basename(filepath) + "\n")
-            generateFileSeparator(filepath)
+        nSim = number_generation.get("1.0", END + '-1c')
+        nSim = int(nSim)
+        Simulator.simulation(nSim)
+        for f in os.listdir('Result_Of_Simulation'):
+            path = os.path.join(os.curdir + '/Result_Of_Simulation', f)
+            files.append(path)
+            labelFileName.configure(text=labelFileName.cget("text") + f + "\n")
+            generateFileSeparator(path)
 
     def generateFileSeparator(filePath):
         f = open(filePath, mode="a")
@@ -84,6 +89,19 @@ def uploadFiles(identityToken):
     frame= Frame(root)
     frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
     
+    # text for number of files
+    number_generation = Text(
+    frame,
+    height = 1,
+    background = "white",
+    foreground = "black",
+    font = ('calibri', 11)
+    )
+    number_generation.pack(
+        pady=5,
+        fill='x'
+    )
+
     # button to select file
     buttonAddFile = ttk.Button(
         frame,
