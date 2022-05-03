@@ -1,0 +1,77 @@
+<ResultList><Event>
+    <Name>UrqxWbvhO</Name>
+    <StartTime>
+        <Date>2020-01-1</Date>
+        <Time> 17:17:14</Time>
+    </StartTime>
+    <EndTime>
+        <Date>2020-01-1</Date>
+        <Time> 20:33:30</Time>
+    </EndTime>
+</Event><ClassResult><Class>
+    <Id>bLcvKoUBP</Id>
+    <Name>qplVVqAhh</Name>
+</Class><Course>
+    <Length>1933</Length>
+    <Climb>816</Climb>
+</Course><PersonResult><Person>
+    <Id>qitqqWMHG</Id>
+    <Name>
+        <Family>Fry</Family>
+        <Given>Lena</Given>
+    </Name>
+</Person><Organisation>
+    <Id>WOTNAFUuz</Id>
+    <Name>jWfuYDohM</Name>
+    <Country code="GBR">BF</Country>
+</Organisation><Result>
+    <BibNumber>90</BibNumber>
+    <StartTime>2020-01-1</StartTime>
+    <FinishTime> 14:20:45</FinishTime>
+    <Time>23</Time>
+    <TimeBehind>79</TimeBehind>
+    <Position>0</Position>
+    <Status>OK</Status>
+    <Route />
+    <ControlCard />
+<Course>
+    <Id>bbNboVUix</Id>
+    <Name>izrvzrTgy</Name>
+    <Length>1933</Length>
+    <Climb>816</Climb>
+</Course><SplitTime>
+    <ControlCode>toUXpWaeA</ControlCode>
+    <Time> 03:35:40</Time>
+</SplitTime><SplitTime>
+    <ControlCode>ZkeNEekAU</ControlCode>
+    <Time> 01:39:07</Time>
+</SplitTime><SplitTime>
+    <ControlCode>vPybrOVWK</ControlCode>
+    <Time> 14:40:03</Time>
+</SplitTime><SplitTime>
+    <ControlCode>AcSYiVWJj</ControlCode>
+    <Time> 14:42:29</Time>
+</SplitTime><SplitTime>
+    <ControlCode>ghSPVBoyD</ControlCode>
+    <Time> 17:58:30</Time>
+</SplitTime><Route /><ControlCard /><AssignedFee>
+    <Fee>
+        <Id>jzMnPeZnk</Id>
+        <Name>xMydYoxkW</Name>
+        <Amount currency="EUR">594</Amount>
+        <TaxableAmount currency="EUR">48</TaxableAmount>
+    </Fee>
+</AssignedFee><ServiceRequest>
+    <Service>
+        <Id>QMtRYuNaE</Id>
+        <Name>HAQSTEwcy</Name>
+    </Service>
+    <RequestedQuantity>6</RequestedQuantity>
+    <AssignedFee>
+        <Fee>
+            <Id>JKmprdATN</Id>
+            <Name>nofsYipyh</Name>
+            <Amount currency="EUR">10</Amount>
+        </Fee>
+    </AssignedFee>
+</ServiceRequest></Result></PersonResult></ClassResult></ResultList>
