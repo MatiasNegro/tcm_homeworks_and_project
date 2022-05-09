@@ -14,103 +14,103 @@ def info(massage):
         message = massage
     )
 
-#try:
+try:
 
-def showFiles():
-    headers = {
-        'mod':'read'
-    }
-    r = requests.get(url, headers=headers)
-    content = r.content
-    body = content.decode('utf-8')
-    nameList = body.replace('partite/','')
-    return nameList
-
-def downloadFile():
-    searchedFile = fileSearched_textbox.get("1.0", END + '-1c')
-    searchedFile = searchedFile.replace('\n', '')
-    if(searchedFile != ''):
+    def showFiles():
         headers = {
-            'filename':searchedFile,
-            'mod':'download'
+            'mod':'read'
         }
         r = requests.get(url, headers=headers)
-        file = r.content
-        file = file.decode('utf-8')
-        if('ResponseMetadata' in file):
-            info('Error 404: file not found.')
-        else: 
-            destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c') + '.json'
-            f = open(destinationUrl, 'w+')
-            f.write(file)
-            f.close()
-            info('File downloaded succesfully, check downloads folder.')
-        fileSearched_textbox.delete('1.0', END)
+        content = r.content
+        body = content.decode('utf-8')
+        nameList = body.replace('partite/','')
+        return nameList
 
-# root window
-root = Tk()
-photo = PhotoImage(file="img/icon.png")
-root.iconphoto(False, photo)
-root.title('Download files')
-root.geometry('500x500')
-root.resizable(True, True)
-frame = Frame(root)
-frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
+    def downloadFile():
+        searchedFile = fileSearched_textbox.get("1.0", END + '-1c')
+        searchedFile = searchedFile.replace('\n', '')
+        if(searchedFile != ''):
+            headers = {
+                'filename':searchedFile,
+                'mod':'download'
+            }
+            r = requests.get(url, headers=headers)
+            file = r.content
+            file = file.decode('utf-8')
+            if('ResponseMetadata' in file):
+                info('Error 404: file not found.')
+            else: 
+                destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c') + '.json'
+                f = open(destinationUrl, 'w+')
+                f.write(file)
+                f.close()
+                info('File downloaded succesfully, check downloads folder.')
+            fileSearched_textbox.delete('1.0', END)
 
-fileNames = showFiles()
+    # root window
+    root = Tk()
+    photo = PhotoImage(file="img/icon.png")
+    root.iconphoto(False, photo)
+    root.title('Download files')
+    root.geometry('500x500')
+    root.resizable(True, True)
+    frame = Frame(root)
+    frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
 
-# label title
-labelFileName = ttk.Label(
-    frame,
-    text = 'Files in the database:',
-    font = ('calibri', 13)
-)
-labelFileName.pack(
-    pady = 5,
-    ipadx = 5,
-    side = 'top'
-)
-# label with all the files in the bucket
-labelFileName = ttk.Label(
-    frame,
-    text = fileNames,
-    font = ('calibri', 11)
-)
-labelFileName.pack(
-    ipadx = 5,
-    side = 'top'
-)
+    fileNames = showFiles()
 
-downloadFrame = Frame(frame)
-downloadFrame.pack(fill = BOTH, expand = True)
+    # label title
+    labelFileName = ttk.Label(
+        frame,
+        text = 'Files in the database:',
+        font = ('calibri', 13)
+    )
+    labelFileName.pack(
+        pady = 5,
+        ipadx = 5,
+        side = 'top'
+    )
+    # label with all the files in the bucket
+    labelFileName = ttk.Label(
+        frame,
+        text = fileNames,
+        font = ('calibri', 11)
+    )
+    labelFileName.pack(
+        ipadx = 5,
+        side = 'top'
+    )
 
-# button that downloads file
-buttonSend = ttk.Button(
-    frame,
-    text = 'Download',
-    command = downloadFile
-)
-buttonSend.pack(
-    ipadx = 5,
-    ipady = 5,
-    side = 'left'
-)
-# file name textbox
-fileSearched_textbox = Text(
-    frame,
-    height = 1,
-    background = "white",
-    foreground = "black",
-    font = ('calibri', 11)
-)
-fileSearched_textbox.pack(
-    pady = 5,
-    fill = 'x',
-    side = 'right'
-)
+    downloadFrame = Frame(frame)
+    downloadFrame.pack(fill = BOTH, expand = True)
 
-root.mainloop()
+    # button that downloads file
+    buttonSend = ttk.Button(
+        frame,
+        text = 'Download',
+        command = downloadFile
+    )
+    buttonSend.pack(
+        ipadx = 5,
+        ipady = 5,
+        side = 'left'
+    )
+    # file name textbox
+    fileSearched_textbox = Text(
+        frame,
+        height = 1,
+        background = "white",
+        foreground = "black",
+        font = ('calibri', 11)
+    )
+    fileSearched_textbox.pack(
+        pady = 5,
+        fill = 'x',
+        side = 'right'
+    )
 
-#except BaseException as error:
-#    showinfo(title='Error', message="Sorry, there was an error :/")
-#    root.destroy()
+    root.mainloop()
+
+except BaseException as error:
+    showinfo(title='Error', message="Sorry, there was an error :/")
+    root.destroy()
