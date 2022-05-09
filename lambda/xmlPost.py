@@ -41,10 +41,8 @@ def lambda_handler(event, context):
         files_name.append(event['headers']['filename-'+str(i)])
     
     file_content = base64.b64decode(event['body'])
-    event_name = base64.b64decode(event[""])
-    event_date =base64.b64decode(event[""])
-    u_email = base64.b64decode(event[""])
     
+    # si passa da byte a string e si rimuove il flag di separazione dei file
     content_decoded = file_content.decode("utf-8")
     content_split = content_decoded.split('FLAGSEPARATORCODE')
     content_split.pop(len(content_split)-1)
@@ -53,6 +51,7 @@ def lambda_handler(event, context):
     j = 0
     response['body'] = 'The following files have been uploaded:'
     
+    # cicla per ogni file nella richiesta (string)
     for file in content_split:
         
         file_name = name_control(files_name[j])
