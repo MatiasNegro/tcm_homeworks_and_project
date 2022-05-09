@@ -20,30 +20,36 @@ response  = {
 
 def lambda_handler(event, context):
     
-    mod = event['headers']['mod']
+    resource = event["resource"]
+    resource = resource.replace('/','')
     response['body'] = ''
     
     try:
         table = dynamodb.Table('DBresults')
         
-        if(mod == 'read'):
-
-            primary_keys= []
-            count = 0
+        if(resource == 'list_races'):
+            dict = {}
             r = ddb_client.scan(
                 TableName='DBresults',
                 AttributesToGet=[
                     'event',
+                    'Event'
                 ],
             )
-            count += r['Count']
+            j = 0
             for i in r['Items']:
-                primary_keys.append(i['event']['S'])
-            for key in primary_keys:
-                response['body'] += key + '\n'
+                dict[j] = {
+                    'race_name' : i['Event']['M']['Name']['S'],
+                    'race_date' : i['Event']['M']['EndTime']['M']['Date']['S'],
+                    'race_id' : i['event']['S'],
+                }
+                j += 1
+            dict_json = json.dumps(dict, indent=4)
+            dict_json = dict_json.split(', "ResponseMetadata":')
+            dict_json = dict_json[0]
+            response['body'] = dict_json
             
-        elif(mod == 'download'):
-            #Table definition
+        elif(resource == 'download'):
             #Getting the key
             key = event["headers"]["filename"]
             #Query
@@ -54,9 +60,32 @@ def lambda_handler(event, context):
             item_json = item_json[0] + "}"
             #Item return when the query has been possile (statusCode:200)
             response['body'] = item_json
+        
+        ## work in progress
+        elif(resource == 'list_classes'):
+            dict = {}
+            id = event["queryStringParameters"]["id"]
+            r = ddb_client.scan(
+                TableName='DBresults',
+                AttributesToGet=[
+                    'event',
+                    'ClassResult'
+                ],
+            )
+            j = 0
+            for i in r['Items']:
+                if (i['event']['S'] == id):
+                    dict = {}
+            '''dict_json = json.dumps(dict, indent=4)
+            dict_json = dict_json.split(', "ResponseMetadata":')
+            dict_json = dict_json[0]'''
+            response['body'] = 'lmao'
+            
+        #elif(resource == 'results'):
+            
             
         else:
-            response['body'] = 'Error 404: "mod" header not found'
+            response['body'] = 'Error 404: resource not found'
         
     except Exception as e:
         raise IOError(e)
