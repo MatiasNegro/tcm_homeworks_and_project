@@ -62,6 +62,14 @@ def list_classes():
     body = r.content.decode('utf-8')
     info(body, 'JSON')
 
+def results():
+    url = os.getenv('URL_RESULTS')
+    id = 'BjcqMLq2020-01-2'
+    cl = 'asd'
+    r = requests.get(url, params = {'id' : id, 'class' : cl})
+    body = r.content.decode('utf-8')
+    info(body, 'JSON')
+
 # root window
 root = Tk()
 photo = PhotoImage(file="img/icon.png")
@@ -103,7 +111,16 @@ buttonListClasses.pack(
     ipadx = 5,
     ipady = 5,
 )
-
+# get ranking of a class in an event
+buttonListClasses = ttk.Button(
+    frame,
+    text = 'results',
+    command = results
+)
+buttonListClasses.pack(
+    ipadx = 5,
+    ipady = 5,
+)
 downloadFrame = Frame(frame)
 downloadFrame.pack(fill = BOTH, expand = True)
 
