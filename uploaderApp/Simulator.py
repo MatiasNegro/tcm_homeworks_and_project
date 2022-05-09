@@ -174,6 +174,6 @@ def simulation(num):
     for i in f_r_l:
         el_tree = ET.ElementTree(i)
         name = el_tree.find("Event").find("Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
-        el_tree.write('Result_Of_Simulation/' + name, encoding = 'utf-8')
+        el_tree.write('Result_of_Simulation/' + name, encoding = 'utf-8')
     
  
