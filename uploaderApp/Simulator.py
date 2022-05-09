@@ -1,4 +1,3 @@
-from unicodedata import name
 import xml.etree.ElementTree as ET
 import random as ran
 import string
