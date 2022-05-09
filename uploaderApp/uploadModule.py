@@ -1,7 +1,5 @@
 # tkinter
-from ctypes import alignment
 from tkinter import *
-from tkinter import filedialog
 from tkinter import ttk
 from tkinter.messagebox import showinfo
 # requests
