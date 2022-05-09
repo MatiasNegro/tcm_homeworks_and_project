@@ -16,7 +16,8 @@ def format_validator(root):
                 doc = etree.parse(f_source, parser)
             except etree.XMLSyntaxError as e:
                 # this exception is thrown on schema validation error
-                print(e)
+                #print(e) è solo per eventuale debugging
+                #print(e)
                 flag = False
     
     return flag
