@@ -41,6 +41,9 @@ def lambda_handler(event, context):
         files_name.append(event['headers']['filename-'+str(i)])
     
     file_content = base64.b64decode(event['body'])
+    event_name = base64.b64decode(event[""])
+    event_date =base64.b64decode(event[""])
+    u_email = base64.b64decode(event[""])
     
     content_decoded = file_content.decode("utf-8")
     content_split = content_decoded.split('FLAGSEPARATORCODE')

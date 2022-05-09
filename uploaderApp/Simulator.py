@@ -1,8 +1,5 @@
 from unicodedata import name
 import xml.etree.ElementTree as ET
-import xml.etree as xe
-from pprint import pprint
-import json
 import random as ran
 import string
 import datetime
