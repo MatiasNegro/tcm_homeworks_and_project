@@ -4,6 +4,7 @@ import boto3
 import os
 import xml.etree.ElementTree as ET
 import re
+import copy
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -20,6 +21,22 @@ response  = {
     'body': ''
 }
 j = 0
+
+def class_result_parser(xml_doc): 
+    '''
+    Prende in ingresso una root del documento xml e restituisce le classi dentro un unico tag <ClassResults> per garantire la compatibilità con dynamodb ed evitare la sovrascrittura dei <ClassResult>
+    '''
+    class_results_base = ET.fromstring('<ClassResults></ClassResults>')
+    result_list = ET.fromstring('<ResultList></ResultList>')
+    root = xml_doc.getroot()
+    event = root.find("Event")
+    c_r_s = copy.deepcopy(class_results_base) 
+    result_list.append(event)
+    for i in root.findall("ClassResult"):
+        c_r_s.append(i)
+    result_list.append(c_r_s)
+    return result_list
+
 
 def lambda_handler(event, context):
     
@@ -63,6 +80,10 @@ def lambda_handler(event, context):
         
         root = ET.fromstring(content)
         root.attrib.clear()
+        
+        #inserimento dei <ClassResult> in un unico <ClassResults>
+        root = class_result_parser(root)
+        
         xmlstr = ET.tostring(root, encoding='utf8', method='xml')
         xmlstr = xmlstr.decode("utf8")
         content = re.sub(' xmlns:ns0="[^"]+"', '', xmlstr, count=1)
