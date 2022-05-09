@@ -4,9 +4,12 @@ from tkinter import ttk
 from tkinter.messagebox import showinfo
 # requests
 import requests
+# local env
+import os
+from dotenv import load_dotenv
 
 # global
-url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/download'
+load_dotenv()
 
 def info(massage):
     showinfo(
@@ -17,10 +20,8 @@ def info(massage):
 try:
 
     def showFiles():
-        headers = {
-            'mod':'read'
-        }
-        r = requests.get(url, headers=headers)
+        url = os.getenv('URL_LISTRACES')
+        r = requests.get(url)
         content = r.content
         body = content.decode('utf-8')
         nameList = body.replace('partite/','')
@@ -34,6 +35,7 @@ try:
                 'filename':searchedFile,
                 'mod':'download'
             }
+            url = os.getenv('URL_DOWNLOAD')
             r = requests.get(url, headers=headers)
             file = r.content
             file = file.decode('utf-8')
