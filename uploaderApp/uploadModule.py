@@ -9,7 +9,6 @@ import os
 import Simulator
 
 # global
-url = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/upload'
 files = []
 flagClear = True
 
@@ -46,17 +45,23 @@ def uploadFiles(identityToken):
         f.write("\nFLAGSEPARATORCODE")
         f.close()
 
-    def generateFileHeader():
-        header = {
-            'accept':'application/json', 
-            'Authorization':identityToken,
-            'fileNumber':str(len(files))
-        }
-        i = 0
-        for f in files:
-            tuple = {"filename-"+str(i) : os.path.basename(f)}
-            i += 1
-            header.update(tuple)
+    def generateFileHeader(registerRace=False):
+        if registerRace==False:
+            header = {
+                'accept':'application/json', 
+                'Authorization':identityToken,
+                'fileNumber':str(len(files))
+            }
+            i = 0
+            for f in files:
+                tuple = {"filename-"+str(i) : os.path.basename(f)}
+                i += 1
+                header.update(tuple)
+        else:
+            header = {
+                'accept':'application/json', 
+                'Authorization':identityToken
+            }
         return header
 
     def generateFileDict():
@@ -70,12 +75,19 @@ def uploadFiles(identityToken):
 
     # sending 
     def sendPost():
+        url = os.getenv('URL_UPLOAD')
         fileHeaders = generateFileHeader()
         fileDict = generateFileDict()
         r = requests.post(url, files=fileDict, headers=fileHeaders)
         info(r.content)
         global flagClear
         flagClear = False
+
+    def registerracePost():
+        url = os.getenv('URL_REGISTERRACE')
+        headers = generateFileHeader(True)
+        r = requests.post(url, params={'race_name':'magingo', 'race_date':'oggi'}, headers=headers)
+        info(r.content)
 
     # root window
     root = Tk()
@@ -139,5 +151,16 @@ def uploadFiles(identityToken):
         ipady=5,
         side='top'
     )
-        
+    buttonRegisterRace = ttk.Button(
+        frame,
+        text='Register race',
+        command=registerracePost
+    )
+    buttonRegisterRace.pack(
+        pady=5,
+        ipadx=5,
+        ipady=5,
+        side='top'
+    )
+
     root.mainloop()
