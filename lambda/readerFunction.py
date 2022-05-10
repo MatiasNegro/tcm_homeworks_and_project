@@ -60,8 +60,7 @@ def lambda_handler(event, context):
             item_json = item_json[0] + "}"
             #Item return when the query has been possile (statusCode:200)
             response['body'] = item_json
-        
-        ## work in progress
+            
         elif(resource == 'list_classes'):
             dict = {}
             id = event["queryStringParameters"]["id"]
@@ -69,20 +68,37 @@ def lambda_handler(event, context):
                 TableName='DBresults',
                 AttributesToGet=[
                     'event',
-                    'ClassResult'
+                    'ClassResults'
                 ],
             )
             j = 0
             for i in r['Items']:
                 if (i['event']['S'] == id):
-                    dict = {}
+                    dict = i['ClassResults']
+            dict_json = json.dumps(dict, indent=4)
+            dict_json = dict_json.split(', "ResponseMetadata":')
+            dict_json = dict_json[0]
+            response['body'] = dict_json
+            
+        elif(resource == 'results'):
+            dict = {}
+            id = event["queryStringParameters"]["id"]
+            r = ddb_client.scan(
+                TableName='DBresults',
+                AttributesToGet=[
+                    'event',
+                    'ClassResults'
+                ],
+            )
+            j = 0
+            for i in r['Items']:
+                if (i['event']['S'] == id):
+                    dict = i['ClassResults']
+                    
             '''dict_json = json.dumps(dict, indent=4)
             dict_json = dict_json.split(', "ResponseMetadata":')
-            dict_json = dict_json[0]'''
-            response['body'] = 'lmao'
-            
-        #elif(resource == 'results'):
-            
+            dict_json = dict_json[0]
+            response['body'] = dict_json'''
             
         else:
             response['body'] = 'Error 404: resource not found'
