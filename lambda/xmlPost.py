@@ -118,15 +118,19 @@ def lambda_handler(event, context):
                 
     elif(resource == 'register_race'):
         
-        # parametri per la registrazione di una gara
-        race_name = event["queryStringParameters"]["race_name"]
-        race_date = event["queryStringParameters"]["race_date"]
-        
         # all'interno di claims ci sono gli attributi di chi esegue la request
         username = event["requestContext"]["authorizer"]["claims"]["cognito:username"]
         email = event["requestContext"]["authorizer"]["claims"]["email"]
         
-        #INSERIRE CODICE PER LA GENERAZIONE DEL FILE XML CON race_name race_date email
+        # parametri obbligatori per la registrazione di una gara
+        race_name = event["queryStringParameters"]["race_name"]
+        race_date = event["queryStringParameters"]["race_date"]
+        # individuazione parametri non obbligatori
+        if (len(event["queryStringParameters"])>2):
+            print('ci sono più parametri')
+        
+        # INSERIRE CODICE PER LA GENERAZIONE DEL FILE XML CON race_name race_date email
+        # leggere le specifiche ed individuare quali parametri potrebbero essere aggiunti e inserirli nell'if sopra
         
     else:
         response['Body'] = 'Error 404: resource not found'
