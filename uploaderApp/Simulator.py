@@ -186,3 +186,4 @@ def simulation(num):
             "Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
         el_tree.write('Result_of_Simulation/' + name, encoding='utf-8')
 
+simulation(2)
