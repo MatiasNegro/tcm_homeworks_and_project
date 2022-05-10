@@ -14,5 +14,6 @@ def class_result_parser(root):
     for i in root.findall("ClassResult"):
         c_r_s.append(i)
     r_l.append(c_r_s)
-    return r_l
+    ET.ElementTree(r_l).write("TEST.xml", encoding='utf-8')
 
+class_result_parser(ET.parse('20227.xml').getroot())

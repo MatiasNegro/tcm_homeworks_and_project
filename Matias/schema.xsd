@@ -43,7 +43,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="createTime" type="xsd:dateTime" use="optional">
+    <xsd:attribute name="createTime" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation>
           The time when the file was created.
@@ -489,7 +489,7 @@
         </xsd:restriction>
       </xsd:simpleType>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="PersonName">
@@ -543,7 +543,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="ControlCard">
@@ -561,7 +561,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+        <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
@@ -668,7 +668,7 @@
         </xsd:restriction>
       </xsd:simpleType>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="Role">
@@ -807,7 +807,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="EntryReceiver">
@@ -959,7 +959,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:simpleType name="EventClassification">
@@ -1006,14 +1006,14 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="StartTime" type="xsd:dateTime">
+      <xsd:element name="StartTime" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>
             The start time of the sub-event.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="EndTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="EndTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The end time of the sub-event.
@@ -1049,7 +1049,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="InformationItem">
@@ -1074,7 +1074,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="Class">
@@ -1260,7 +1260,7 @@
         </xsd:restriction>
       </xsd:simpleType>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="ClassType">
@@ -1279,7 +1279,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:simpleType name="EventClassStatus">
@@ -1407,7 +1407,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="FirstStart" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="FirstStart" type="xsd:string" minOccurs="0"/>
       <xsd:element name="Status" type="RaceClassStatus" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
@@ -1451,7 +1451,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="Fee">
@@ -1497,14 +1497,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="ValidFromTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="ValidFromTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the fee takes effect.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="ValidToTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="ValidToTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the fee expires.
@@ -1558,7 +1558,7 @@
         </xsd:restriction>
       </xsd:simpleType>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="AssignedFee">
@@ -1590,7 +1590,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
   
   <xsd:complexType name="Amount">
@@ -1677,7 +1677,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="EntryTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="EntryTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the entry was first submitted.
@@ -1692,7 +1692,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="TeamEntry">
@@ -1766,7 +1766,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="EntryTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="EntryTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the entry was first submitted.
@@ -1781,7 +1781,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="TeamEntryPerson">
@@ -1977,7 +1977,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="StartName">
@@ -2042,7 +2042,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="PersonRaceStart">
@@ -2059,7 +2059,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StartTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="StartTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the person starts.
@@ -2175,7 +2175,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="TeamMemberStart">
@@ -2221,7 +2221,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="TeamMemberRaceStart">
@@ -2252,7 +2252,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StartTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="StartTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the team member starts.
@@ -2354,7 +2354,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="PersonResult">
@@ -2400,7 +2400,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="PersonRaceResult">
@@ -2417,14 +2417,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StartTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="StartTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the person that the result belongs to started, expressed in ISO 8601 format.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="FinishTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="FinishTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the person that the result belongs to finished, expressed in ISO 8601 format.
@@ -2648,7 +2648,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="TeamMemberRaceResult">
@@ -2679,14 +2679,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StartTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="StartTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the team member that the result belongs to started, expressed in ISO 8601 format.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="FinishTime" type="xsd:dateTime" minOccurs="0">
+      <xsd:element name="FinishTime" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             The time when the team member that the result belongs to finished, expressed in ISO 8601 format.
@@ -3297,7 +3297,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="GeoPosition">
@@ -3829,7 +3829,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="SimpleCourse">
@@ -3984,7 +3984,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:simpleType name="ControlType">
@@ -4060,7 +4060,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="OrganisationServiceRequest">
@@ -4164,7 +4164,7 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="Account" mixed="false">
@@ -4207,7 +4207,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
   </xsd:complexType>
 
   <xsd:complexType name="Country" mixed="false">
@@ -4249,7 +4249,7 @@
             </xsd:restriction>
           </xsd:simpleType>
         </xsd:attribute>
-        <xsd:attribute name="modifyTime" type="xsd:dateTime" use="optional"/>
+        <xsd:attribute name="modifyTime" type="xsd:string" use="optional"/>
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
