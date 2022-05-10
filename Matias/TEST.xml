@@ -1,6 +1,4 @@
-
-<ResultList>
-	<Event>
+<ResultList><Event>
 		<Name>Coppa Italia sprint 3^ prova</Name>
 		<StartTime>
 			<Date>2022-04-23</Date>
@@ -11,7 +9,7 @@
 			<Time>19:00:00</Time>
 		</EndTime>
 	</Event>
-	<ClassResult>
+	<ClassResults><ClassResult>
 		<Class>
 			<Id>ME</Id>
 			<Name>M ELITE</Name>
@@ -2052,7 +2050,7 @@
 		</PersonResult>
 		<PersonResult>
 			<Person>
-				<Id/>
+				<Id />
 				<Name>
 					<Family>Kondratov</Family>
 					<Given>Andrei</Given>
@@ -8096,7 +8094,7 @@
 		</Course>
 		<PersonResult>
 			<Person>
-				<Id/>
+				<Id />
 				<Name>
 					<Family>Savkina</Family>
 					<Given>Ekaterina</Given>
@@ -25613,7 +25611,7 @@
 		</PersonResult>
 		<PersonResult>
 			<Person>
-				<Id/>
+				<Id />
 				<Name>
 					<Family>Wuestenhagen</Family>
 					<Given>Rolf</Given>
@@ -31614,7 +31612,7 @@
 		</PersonResult>
 		<PersonResult>
 			<Person>
-				<Id/>
+				<Id />
 				<Name>
 					<Family>Pezzati</Family>
 					<Given>Filippo</Given>
@@ -43029,7 +43027,7 @@
 		</PersonResult>
 		<PersonResult>
 			<Person>
-				<Id/>
+				<Id />
 				<Name>
 					<Family>Cortellazzi</Family>
 					<Given>Edita</Given>
@@ -51782,4 +51780,4 @@
 			</Result>
 		</PersonResult>
 	</ClassResult>
-</ResultList>
+</ClassResults></ResultList>
