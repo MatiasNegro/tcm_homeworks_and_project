@@ -30,7 +30,7 @@ def uploadFiles(identityToken):
     
     def selectFile():
         if(flagClear):
-            nSim = number_generation.get("1.0", END + '-1c')
+            nSim = number_generation.get("1.0", END + "-1c")
             nSim = int(nSim)
             Simulator.simulation(nSim)
             for f in os.listdir('Result_Of_Simulation'):

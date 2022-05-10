@@ -13,17 +13,17 @@ person_result_xml = ET.fromstring("<PersonResult></PersonResult>")
 class_result_xml = ET.fromstring("<ClassResult></ClassResult>")
 
 # Files
-event_base = ET.parse("uploaderApp/xmls/Event.xml")
-class_base = ET.parse("uploaderApp/xmls/Class.xml")
-course_base = ET.parse("uploaderApp/xmls/Course.xml")
-person_base = ET.parse("uploaderApp/xmls/Person.xml")
-organisation_base = ET.parse("uploaderApp/xmls/Organisation.xml")
-result_base = ET.parse("uploaderApp/xmls/Result.xml")
-split_time_base = ET.parse("uploaderApp/xmls/SplitTime.xml")
-control_card_base = ET.parse("uploaderApp/xmls/ControlCard.xml")
-route_base = ET.parse("uploaderApp/xmls/Route.xml")
-assigned_fee_base = ET.parse("uploaderApp/xmls/AssignedFee.xml")
-service_request_base = ET.parse("uploaderApp/xmls/ServiceRequest.xml")
+event_base = ET.parse("xmls/Event.xml")
+class_base = ET.parse("xmls/Class.xml")
+course_base = ET.parse("xmls/Course.xml")
+person_base = ET.parse("xmls/Person.xml")
+organisation_base = ET.parse("xmls/Organisation.xml")
+result_base = ET.parse("xmls/Result.xml")
+split_time_base = ET.parse("xmls/SplitTime.xml")
+control_card_base = ET.parse("xmls/ControlCard.xml")
+route_base = ET.parse("xmls/Route.xml")
+assigned_fee_base = ET.parse("xmls/AssignedFee.xml")
+service_request_base = ET.parse("xmls/ServiceRequest.xml")
 
 
 def date_sim():
@@ -188,7 +188,4 @@ def simulation(num):
         el_tree = ET.ElementTree(i)
         name = el_tree.find("Event").find(
             "Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
-        el_tree.write('uploaderApp/Result_of_Simulation/' + name, encoding='utf-8')
-
-
-simulation(2)
+        el_tree.write('Result_of_Simulation/' + name, encoding='utf-8')
