@@ -130,7 +130,7 @@ def lambda_handler(event, context):
                 root = ET.fromstring(content)
 
                 if not format_validator(root):
-                    response['Body'] += '\nInvalid Format for file: ' + file_name
+                    response['body'] += '\nInvalid Format for file: ' + file_name
                 else:
 
                     root.attrib.clear()
@@ -166,7 +166,9 @@ def lambda_handler(event, context):
             print('ci sono più parametri')
 
         # si suppone che ogni volta che viene aggiornato un file si aggiornino i classResult e non i dati Event
+        
         root = ET.Element("ResultList")
+        print(root)
         event = ET.SubElement(root, "Event")
         classresult = ET.SubElement(root, "ClassResult")
         name = ET.SubElement(event, "Name")

@@ -30,10 +30,8 @@ def lambda_handler(event, context):
     resource = resource.replace('/','')
     response['body'] = ''
 
-
     
-    if(resource == 'list_races'):
-        
+    if resource == 'list_races':
         dict = {}
         r = ddb_client.scan(
             TableName='DBresults',
@@ -53,24 +51,24 @@ def lambda_handler(event, context):
         dict_json = json.dumps(dict, indent=4)
         dict_json = dict_json.split(', "ResponseMetadata":')
         dict_json = dict_json[0]
-        response['body'] = dict_json
+        if dict=={}:
+            response['body'] = 'Races not found'
+        else:
+            response['body'] = dict_json
         
         
-    elif(resource == 'download'):
-        
+    elif resource == 'download':
         #Getting the key
         key = prefix + event["headers"]["filename"]
-        #Query
         try:
             race = s3_client.get_object(Bucket=BUCKET_NAME, Key=key)
             xml = race['Body'].read().decode('utf-8')
-            print(xml)
             response['body'] = xml
         except:
-            response['body'] = '404'
+            response['body'] = 'error404'
         
-    elif(resource == 'list_classes'):
         
+    elif resource=='list_classes':
         dict = {}
         id = event["queryStringParameters"]["id"]
         r = ddb_client.scan(
@@ -82,18 +80,25 @@ def lambda_handler(event, context):
         )
         j = 0
         for i in r['Items']:
-            print(i['event']['S'])
             if (i['event']['S'] == id):
-                dict = i['ClassResults']
-                print(dict)
+                classResults = i['ClassResults']['M']
+                i=0
+                for k in classResults:
+                    dict['class'+str(i)] = {
+                        'id' : classResults[k]['M']['Class']['M']['Id']['S'],
+                        'Name' : classResults[k]['M']['Class']['M']['Name']['S']
+                    }
+                    i += 1
         dict_json = json.dumps(dict, indent=4)
         dict_json = dict_json.split(', "ResponseMetadata":')
         dict_json = dict_json[0]
-        response['body'] = dict_json
+        if dict=={}:
+            response['body'] = 'Error 404: Race not found'
+        else:
+            response['body'] = dict_json
         
         
     elif(resource == 'results'):
-        
         dict = {}
         id = event["queryStringParameters"]["id"]
         cl = event["queryStringParameters"]["class"]
@@ -104,18 +109,25 @@ def lambda_handler(event, context):
                 'ClassResults'
             ],
         )
-        j = 0
         for i in r['Items']:
             if (i['event']['S'] == id):
                 for k in i['ClassResults']['M']:
-                    for l in i['ClassResults']['M'][k]['L']:
-                        print(l['M']['Class']['M']['Id']['S'])
-                
-                
-        '''dict_json = json.dumps(dict, indent=4)
+                    if (i['ClassResults']['M'][k]['M']['Class']['M']['Id']['S'] == cl):
+                        for p in i['ClassResults']['M'][k]['M']:
+                            if 'PersonResult' in p:
+                                idPlayer = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']['Id']['S']
+                                playerPosition = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['Position']['S']
+                                dict[playerPosition] = {
+                                    'idPlayer' : idPlayer
+                                }
+        
+        dict_json = json.dumps(dict, indent=4)
         dict_json = dict_json.split(', "ResponseMetadata":')
         dict_json = dict_json[0]
-        response['body'] = dict_json'''
+        if dict=={}:
+            response['body'] = 'Error 404: Race not found'
+        else:
+            response['body'] = dict_json
         
         
     else:

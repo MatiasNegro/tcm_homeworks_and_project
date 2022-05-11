@@ -154,7 +154,7 @@ def uploadFiles(identityToken):
         side='top'
     )
     canvas = Canvas(frame, width=750, height=15)
-    canvas.create_text(300, 7, text="Race Name:", font=("calibri", 11), justify="center")
+    canvas.create_text(50, 7, text="Race Name:", font=("calibri", 11), justify="center")
     canvas.pack(
         side='top'
     )
@@ -171,7 +171,7 @@ def uploadFiles(identityToken):
         fill='x'
     )
     canvas = Canvas(frame, width=750, height=15)
-    canvas.create_text(300, 7, text="Race Date:", font=("calibri", 11), justify="center")
+    canvas.create_text(50, 7, text="Race Date:", font=("calibri", 11), justify="center")
     canvas.pack(
         side='top'
     )

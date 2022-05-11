@@ -24,19 +24,12 @@ def dictRaces():
     url = os.getenv('URL_LISTRACES')
     r = requests.get(url)
     body = r.content.decode('utf-8')
-    info(body, 'JSON')
-    '''bodyDict = json.loads(body)
-    for j in bodyDict:
-        raceName = 'race name: ' + bodyDict[j]['race_name'] + '\n'
-        raceDate = 'race date: ' + bodyDict[j]['race_date'] + '\n'
-        raceId = 'race id: ' + bodyDict[j]['race_id']
-        message = raceName + raceDate + raceId
-        info(message, "event " + str(j))'''
+    info(body, 'dictRaces')
 
 def downloadFile():
-    searchedFile = fileSearched_textbox.get("1.0", END + '-1c')
+    searchedFile = id_textBox.get("1.0", END + '-1c') + '.xml'
     searchedFile = searchedFile.replace('\n', '')
-    if(searchedFile != ''):
+    if(searchedFile.replace('.xml', '') != ''):
         headers = {
             'filename':searchedFile
         }
@@ -44,37 +37,37 @@ def downloadFile():
         r = requests.get(url, headers=headers)
         file = r.content
         file = file.decode('utf-8')
-        if('404' in file):
-            info('Error 404: file not found.')
+        if('error404' in file):
+            info('Error 404: race not found.')
         else: 
-            destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c')
+            destinationUrl = 'downloads/' + searchedFile
             f = open(destinationUrl, 'w+')
             f.write(file)
             f.close()
-            info('File downloaded succesfully, check downloads folder.')
-        fileSearched_textbox.delete('1.0', END)
+            info('File downloaded succesfully, check downloads folder.', 'downloadFile')
 
 def list_classes():
     url = os.getenv('URL_LISTCLASSES')
     id = id_textBox.get("1.0", END + '-1c')
-    r = requests.get(url, params = {'id' : id})
-    body = r.content.decode('utf-8')
-    info(body, 'JSON')
+    if id!='':
+        r = requests.get(url, params = {'id' : id})
+        body = r.content.decode('utf-8')
+        info(body, 'list_classes')
 
-def results(id, cl):
+def results():
     url = os.getenv('URL_RESULTS')
     id = id_textBox.get("1.0", END + '-1c')
     cl = class_textBox.get("1.0", END + '-1c')
     r = requests.get(url, params = {'id' : id, 'class' : cl})
     body = r.content.decode('utf-8')
-    info(body, 'JSON')
+    info(body, 'results')
 
 # root window
 root = Tk()
 photo = PhotoImage(file="img/icon.png")
 root.iconphoto(False, photo)
 root.title('Download files')
-root.geometry('500x500')
+root.geometry('500x350')
 root.resizable(True, True)
 frame = Frame(root)
 frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
@@ -82,7 +75,7 @@ frame.pack(fill = BOTH, expand = True, padx = 10, pady = 20)
 # label title
 labelFileName = ttk.Label(
     frame,
-    text = 'Files in the database:',
+    text = 'Races in the database:',
     font = ('calibri', 13)
 )
 labelFileName.pack(
@@ -142,7 +135,6 @@ buttonListClasses.pack(
     ipadx = 5,
     ipady = 5,
 )
-# get ranking of a class in an event
 buttonResults = ttk.Button(
     frame,
     text = 'results',
@@ -152,32 +144,15 @@ buttonResults.pack(
     ipadx = 5,
     ipady = 5,
 )
-downloadFrame = Frame(frame)
-downloadFrame.pack(fill = BOTH, expand = True)
-
-# button that downloads file
 buttonSend = ttk.Button(
     frame,
-    text = 'Download',
+    text = 'Download xml',
     command = downloadFile
 )
 buttonSend.pack(
     ipadx = 5,
     ipady = 5,
-    side = 'left'
-)
-# file name textbox
-fileSearched_textbox = Text(
-    frame,
-    height = 1,
-    background = "white",
-    foreground = "black",
-    font = ('calibri', 11)
-)
-fileSearched_textbox.pack(
-    pady = 5,
-    fill = 'x',
-    side = 'right'
+    side = 'top'
 )
 
 root.mainloop()
