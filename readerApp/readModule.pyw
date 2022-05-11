@@ -38,17 +38,16 @@ def downloadFile():
     searchedFile = searchedFile.replace('\n', '')
     if(searchedFile != ''):
         headers = {
-            'filename':searchedFile,
-            'mod':'download'
+            'filename':searchedFile
         }
         url = os.getenv('URL_DOWNLOAD')
         r = requests.get(url, headers=headers)
         file = r.content
         file = file.decode('utf-8')
-        if('ResponseMetadata' in file):
+        if('404' in file):
             info('Error 404: file not found.')
         else: 
-            destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c') + '.json'
+            destinationUrl = 'downloads/' + fileSearched_textbox.get("1.0", END + '-1c')
             f = open(destinationUrl, 'w+')
             f.write(file)
             f.close()
@@ -57,15 +56,15 @@ def downloadFile():
 
 def list_classes():
     url = os.getenv('URL_LISTCLASSES')
-    id = 'BjcqMLq2020-01-2'
+    id = id_textBox.get("1.0", END + '-1c')
     r = requests.get(url, params = {'id' : id})
     body = r.content.decode('utf-8')
     info(body, 'JSON')
 
-def results():
+def results(id, cl):
     url = os.getenv('URL_RESULTS')
-    id = 'BjcqMLq2020-01-2'
-    cl = 'asd'
+    id = id_textBox.get("1.0", END + '-1c')
+    cl = class_textBox.get("1.0", END + '-1c')
     r = requests.get(url, params = {'id' : id, 'class' : cl})
     body = r.content.decode('utf-8')
     info(body, 'JSON')
@@ -102,6 +101,38 @@ buttonListRaces.pack(
     ipady = 5,
 )
 # get all clases of a race
+canvas = Canvas(frame, width=750, height=15)
+canvas.create_text(50, 7, text="Race Id:", font=("calibri", 11), justify="center")
+canvas.pack(
+    side='top'
+)
+id_textBox = Text(
+    frame,
+    height = 1,
+    background = "white",
+    foreground = "black",
+    font = ('calibri', 11)
+)
+id_textBox.pack(
+    pady = 5,
+    fill = 'x'
+)
+canvas = Canvas(frame, width=750, height=15)
+canvas.create_text(50, 7, text="Race Class:", font=("calibri", 11), justify="center")
+canvas.pack(
+    side='top'
+)
+class_textBox = Text(
+    frame,
+    height = 1,
+    background = "white",
+    foreground = "black",
+    font = ('calibri', 11)
+)
+class_textBox.pack(
+    pady = 5,
+    fill = 'x'
+)
 buttonListClasses = ttk.Button(
     frame,
     text = 'list_classes',
@@ -112,12 +143,12 @@ buttonListClasses.pack(
     ipady = 5,
 )
 # get ranking of a class in an event
-buttonListClasses = ttk.Button(
+buttonResults = ttk.Button(
     frame,
     text = 'results',
     command = results
 )
-buttonListClasses.pack(
+buttonResults.pack(
     ipadx = 5,
     ipady = 5,
 )

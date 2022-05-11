@@ -8,6 +8,12 @@ logger.setLevel(logging.INFO)
 
 dynamodb = boto3.resource('dynamodb')
 ddb_client = boto3.client('dynamodb')
+table = dynamodb.Table('DBresults')
+s3_client = boto3.client('s3')
+s3_resource = boto3.resource('s3')
+BUCKET_NAME = 'xmlresultgreco'
+bucket = s3_resource.Bucket(BUCKET_NAME)
+prefix = 'partite/'
 
 response  = {
     'statusCode': 200,
@@ -23,9 +29,8 @@ def lambda_handler(event, context):
     resource = event["resource"]
     resource = resource.replace('/','')
     response['body'] = ''
-    
 
-    table = dynamodb.Table('DBresults')
+
     
     if(resource == 'list_races'):
         
@@ -41,7 +46,7 @@ def lambda_handler(event, context):
         for i in r['Items']:
             dict[j] = {
                 'race_name' : i['Event']['M']['Name']['S'],
-                'race_date' : i['Event']['M']['EndTime']['M']['Date']['S'],
+                'race_date' : i['Event']['M']['StartTime']['M']['Date']['S'],
                 'race_id' : i['event']['S'],
             }
             j += 1
@@ -54,16 +59,15 @@ def lambda_handler(event, context):
     elif(resource == 'download'):
         
         #Getting the key
-        key = event["headers"]["filename"]
+        key = prefix + event["headers"]["filename"]
         #Query
-        item = table.get_item(Key={'event': key})
-        #Converting the item <dict> to json <string>
-        item_json = json.dumps(item)
-        item_json = item_json.split(', "ResponseMetadata":')
-        item_json = item_json[0] + "}"
-        #Item return when the query has been possile (statusCode:200)
-        response['body'] = item_json
-        
+        try:
+            race = s3_client.get_object(Bucket=BUCKET_NAME, Key=key)
+            xml = race['Body'].read().decode('utf-8')
+            print(xml)
+            response['body'] = xml
+        except:
+            response['body'] = '404'
         
     elif(resource == 'list_classes'):
         
@@ -78,8 +82,10 @@ def lambda_handler(event, context):
         )
         j = 0
         for i in r['Items']:
+            print(i['event']['S'])
             if (i['event']['S'] == id):
                 dict = i['ClassResults']
+                print(dict)
         dict_json = json.dumps(dict, indent=4)
         dict_json = dict_json.split(', "ResponseMetadata":')
         dict_json = dict_json[0]

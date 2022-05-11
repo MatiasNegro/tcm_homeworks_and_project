@@ -168,13 +168,17 @@ def lambda_handler(event, context):
         # si suppone che ogni volta che viene aggiornato un file si aggiornino i classResult e non i dati Event
         root = ET.Element("ResultList")
         event = ET.SubElement(root, "Event")
-        classresult = ET.SubElement(root, "ClassResults")
+        classresult = ET.SubElement(root, "ClassResult")
         name = ET.SubElement(event, "Name")
         name.text = race_name
         starttime = ET.SubElement(event, "StartTime")
-        date = ET.SubElement(starttime, "Date")
-        date.text = race_date
-
+        endtime = ET.SubElement(event, "EndTime")
+        dates = ET.SubElement(starttime, "Date")
+        datee = ET.SubElement(endtime, "Date")
+        dates.text = race_date
+        time = ET.SubElement(starttime, "Time")
+        time = ET.SubElement(endtime, "Time")
+        
         body = ET.tostring(root, encoding='utf8', method='xml')
         fileName = race_name + race_date + ".xml"
 
