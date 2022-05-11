@@ -32,7 +32,7 @@ def format_validator(root):
             #print(e)
             flag_type = False
 
-    print(flag)
+    print(flag or flag_type)
     return (flag or flag_type)
 
-format_validator(ET.parse('ResultList1.xml').getroot())
+format_validator(ET.parse('pippo.xml').getroot())

@@ -3,7 +3,7 @@ import base64
 import boto3
 import xml.etree.ElementTree as ET
 import re
-from lxml1 import etree
+from lxml import etree
 
 # dichiarazione variabili globali
 logger = logging.getLogger()
