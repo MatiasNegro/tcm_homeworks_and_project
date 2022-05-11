@@ -61,7 +61,7 @@ def format_validator(root):
 
 def name_control(file_name, username):
     '''
-    Controllo il bucket per vedere se il nome del file è già presente, nel caso verifica il proprietario
+    Controllo il bucket per vedere se il nome del file è già presente, nel caso verifica chi lo ha caricato
     '''
     flag = True
     for o in bucket.objects.all():
