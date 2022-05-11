@@ -86,7 +86,9 @@ def uploadFiles(identityToken):
     def registerracePost():
         url = os.getenv('URL_REGISTERRACE')
         headers = generateFileHeader(True)
-        r = requests.post(url, params={'race_name':'magingo', 'race_date':'oggi'}, headers=headers)
+        raceName = race_name.get("1.0", END + "-1c")
+        raceDate = race_date.get("1.0", END + "-1c")
+        r = requests.post(url, params={'race_name':raceName, 'race_date':raceDate}, headers=headers)
         info(r.content)
 
     # root window
@@ -150,6 +152,40 @@ def uploadFiles(identityToken):
         ipadx=5,
         ipady=5,
         side='top'
+    )
+    canvas = Canvas(frame, width=750, height=15)
+    canvas.create_text(300, 7, text="Race Name:", font=("calibri", 11), justify="center")
+    canvas.pack(
+        side='top'
+    )
+    # text for race name
+    race_name = Text(
+    frame,
+    height = 1,
+    background = "white",
+    foreground = "black",
+    font = ('calibri', 11)
+    )
+    race_name.pack(
+        pady=5,
+        fill='x'
+    )
+    canvas = Canvas(frame, width=750, height=15)
+    canvas.create_text(300, 7, text="Race Date:", font=("calibri", 11), justify="center")
+    canvas.pack(
+        side='top'
+    )
+    # text for race date
+    race_date = Text(
+    frame,
+    height = 1,
+    background = "white",
+    foreground = "black",
+    font = ('calibri', 11)
+    )
+    race_date.pack(
+        pady=5,
+        fill='x'
     )
     buttonRegisterRace = ttk.Button(
         frame,

@@ -1,6 +1,9 @@
-Per uploadApp:
+Per uploaderApp:
 admin
 Admin123!
+    oppure
+admin2
+Admin2123!
 
 Per readerApp:
 user
