@@ -1,3 +1,4 @@
+from time import time
 import xml.etree.ElementTree as ET
 import random as ran
 import string
@@ -6,6 +7,7 @@ import names
 import randomtimestamp
 import country_code as cd
 import copy
+
 
 # Base xmls
 start_xml = ET.fromstring("<ResultList></ResultList>")
@@ -25,6 +27,14 @@ route_base = ET.parse("xmls/Route.xml")
 assigned_fee_base = ET.parse("xmls/AssignedFee.xml")
 service_request_base = ET.parse("xmls/ServiceRequest.xml")
 
+# Attributes
+
+attr_1 = 'http://www.orienteering.org/datastandard/3.0'
+attr_2 = 'http://www.w3.org/2001/XMLSchema-instance'
+attr_3 = '3.0'
+attr_creation_time = str(datetime.date.today())
+attr_creator = 'Simulation Software'
+attr_status = 'Complete'
 
 def date_sim():
     start_date = datetime.date(2020, 1, 1)
@@ -50,12 +60,12 @@ def simulation(num):
         # Event generation
         event = copy.deepcopy(event_base)
         event.find("Name").text = id_generator()
-        event.find("StartTime").find("Date").text = str(date_sim())[0:9]
+        event.find("StartTime").find("Date").text = str(date_sim())[0:10]
         event.find("StartTime").find("Time").text = str(
-            randomtimestamp.randomtimestamp())[10:]
-        event.find("EndTime").find("Date").text = str(date_sim())[0:9]
+            randomtimestamp.randomtimestamp())[11:]
+        event.find("EndTime").find("Date").text = str(date_sim())[0:10]
         event.find("EndTime").find("Time").text = str(
-            randomtimestamp.randomtimestamp())[10:]
+            randomtimestamp.randomtimestamp())[11:]
 
         classes_list = []
         # Multiple class generation:
@@ -100,11 +110,11 @@ def simulation(num):
 
                 # Resut generation
                 result = copy.deepcopy(result_base)
-                result.find("BibNumber").text = str(ran.randint(0, 99))
+                result.find("BibNumber").text = str(ran.randint(0, 10))
                 result.find("StartTime").text = event.find(
                     "StartTime").find("Date").text
                 result.find("FinishTime").text = str(
-                    randomtimestamp.randomtimestamp())[10:]
+                    randomtimestamp.randomtimestamp())[11:]
                 result.find("Time").text = str(ran.randint(0, 100))
                 result.find("TimeBehind").text = str(ran.randint(0, 100))
                 result.find("Position").text = str(i)
@@ -116,7 +126,7 @@ def simulation(num):
                     split = copy.deepcopy(split_time_base)
                     split.find("ControlCode").text = id_generator()
                     split.find("Time").text = str(
-                        randomtimestamp.randomtimestamp())[10:]
+                        randomtimestamp.randomtimestamp())[11:]
                     split_time_list.append(split)
 
                 # Route generation
@@ -178,6 +188,12 @@ def simulation(num):
             classes_list.append(c_r)
 
         f_r = copy.deepcopy(start_xml)
+        f_r.set('xmlns', attr_1)
+        f_r.set('xmlns:xsi', attr_2)
+        f_r.set('iofVersion', attr_3)
+        f_r.set('createTime', attr_creation_time)
+        f_r.set('creator', attr_creator)
+        f_r.set('status', attr_status)
         f_r.append(event.getroot())
         event.getroot()
         for cl in classes_list:
@@ -189,3 +205,5 @@ def simulation(num):
         name = el_tree.find("Event").find(
             "Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
         el_tree.write('Result_of_Simulation/' + name, encoding='utf-8')
+
+simulation(1)
