@@ -31,7 +31,6 @@ def class_result_parser(root):
     r_l.append(c_r_s)
     return r_l
 
-
 def lambda_handler(event, context):
     
     #Getting file from bucketS3
@@ -41,10 +40,10 @@ def lambda_handler(event, context):
     #THe file is an xml, we need the json
     xml_obj = s3_client.get_object(Bucket = bucket, Key = file_name)['Body'].read().decode('utf-8')
     xml_str = xml_obj#[(108):len(xml_obj) - 38]
-    tree = ET(fromstring(xml_str))
+    tree = ET.fromstring(xml_str)
 
-    root = tree.getroot()
-    root = class_result_parser(root)
+    root = tree
+    root = class_result_parser(tree)
 
     xmldict = xp.XmlDictConfig(root)
 
