@@ -1,0 +1,234 @@
+<ResultList>
+  <Event>
+    <Name>Example event</Name>
+    <StartTime>
+
+      <Date>2011-07-30</Date>
+      <Time>10:00:00+01:00</Time>
+    </StartTime>
+    <EndTime>
+      <Date>2011-07-30</Date>
+      <Time>14:00:00+01:00</Time>
+    </EndTime>
+  </Event>
+  <ClassResults>
+    <ClassResult0>
+      <Class>
+        <Id>1</Id>
+        <Name>Men Elite</Name>
+      </Class>
+
+      <Course>
+
+        <Length>4650</Length>
+
+        <Climb>160</Climb>
+      </Course>
+      <PersonResult>
+        <Person>
+          <Id>1</Id>
+          <Name>
+            <Family>Wood</Family>
+            <Given>George</Given>
+          </Name>
+        </Person>
+
+        <Organisation>
+          <Id>5</Id>
+          <Name>OC Back and Forth</Name>
+          <Country code="GBR">Great Britain</Country>
+        </Organisation>
+        <Result>
+          <BibNumber>101</BibNumber>
+
+
+          <StartTime>2011-07-30T10:00:00+01:00</StartTime>
+          <FinishTime>2011-07-30T10:33:21+01:00</FinishTime>
+
+          <Time>2001</Time>
+
+          <TimeBehind>0</TimeBehind>
+
+          <Position>1</Position>
+
+          <Status>OK</Status>
+
+          <Course>
+            <Id>1</Id>
+            <Name>Men Elite-1</Name>
+            <Length>4650</Length>
+            <Climb>160</Climb>
+          </Course>
+
+
+          <SplitTime>
+            <ControlCode>31</ControlCode>
+
+            <Time>501</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>32</ControlCode>
+            <Time>720</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>31</ControlCode>
+            <Time>818</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>33</ControlCode>
+            <Time>1136</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>31</ControlCode>
+            <Time>1593</Time>
+          </SplitTime>
+
+          <Route>BAMzzEOigAOP4ikBDddJAAJELAXWUOxUKQQAiQBJDw==</Route>
+          <ControlCard>794021</ControlCard>
+
+
+          <AssignedFee>
+            <Fee>
+              <Id>1</Id>
+              <Name>Adult entry fee</Name>
+              <Amount currency="EUR">10</Amount>
+              <TaxableAmount currency="EUR">8</TaxableAmount>
+            </Fee>
+          </AssignedFee>
+
+
+          <ServiceRequest>
+            <Service>
+              <Id>1</Id>
+              <Name>Rental card</Name>
+            </Service>
+            <RequestedQuantity>1</RequestedQuantity>
+            <AssignedFee>
+              <Fee>
+                <Id>4</Id>
+                <Name>Rental card fee</Name>
+                <Amount currency="EUR">2</Amount>
+              </Fee>
+            </AssignedFee>
+          </ServiceRequest>
+        </Result>
+      </PersonResult>
+
+      <PersonResult>
+        <Person>
+          <Id>2</Id>
+          <Name>
+            <Family>Martin</Family>
+            <Given>Edgar</Given>
+          </Name>
+        </Person>
+        <Organisation>
+          <Id>2</Id>
+          <Name>Bushmen OC</Name>
+          <Country code="GBR">Great Britain</Country>
+        </Organisation>
+        <Result>
+          <BibNumber>102</BibNumber>
+          <StartTime>2011-07-30T10:03:00+01:00</StartTime>
+
+          <FinishTime>2011-07-30T10:39:42+01:00</FinishTime>
+
+          <Time>2202</Time>
+          <Status>MissingPunch</Status>
+          <Course>
+            <Id>2</Id>
+            <Name>Men Elite-2</Name>
+            <Length>4650</Length>
+            <Climb>160</Climb>
+          </Course>
+          <SplitTime>
+            <ControlCode>31</ControlCode>
+            <Time>693</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>33</ControlCode>
+            <Time>1581</Time>
+          </SplitTime>
+          <SplitTime>
+            <ControlCode>31</ControlCode>
+            <Time>1920</Time>
+          </SplitTime>
+
+          <SplitTime status="Missing">
+            <ControlCode>32</ControlCode>
+          </SplitTime>
+          <SplitTime status="Missing">
+            <ControlCode>31</ControlCode>
+          </SplitTime>
+
+          <SplitTime status="Additional">
+            <ControlCode>32</ControlCode>
+            <Time>966</Time>
+          </SplitTime>
+          <SplitTime status="Additional">
+            <ControlCode>31</ControlCode>
+            <Time>1379</Time>
+          </SplitTime>
+          <ControlCard>299482</ControlCard>
+          <AssignedFee>
+            <Fee>
+              <Id>2</Id>
+              <Name>Youth entry fee</Name>
+              <Amount currency="EUR">5</Amount>
+              <TaxableAmount currency="EUR">4</TaxableAmount>
+            </Fee>
+          </AssignedFee>
+        </Result>
+      </PersonResult>
+    </ClassResult0>
+    <ClassResult1>
+      <Class>
+        <Id>2</Id>
+        <Name>Open</Name>
+      </Class>
+      <Course>
+        <Id>3</Id>
+        <Name>Open</Name>
+        <Length>2990</Length>
+        <Climb>120</Climb>
+      </Course>
+      <PersonResult>
+        <Person>
+          <Id>3</Id>
+          <Name>
+            <Family>Lawson</Family>
+            <Given>Toni</Given>
+          </Name>
+        </Person>
+        <Organisation>
+          <Id>6</Id>
+          <Name>Doubtful Direction</Name>
+          <Country code="GBR">Great Britain</Country>
+        </Organisation>
+        <Result>
+          <StartTime>2011-07-30T10:15:00+01:00</StartTime>
+          <Status>DidNotStart</Status>
+          <ControlCard>973078</ControlCard>
+
+          <AssignedFee>
+            <Fee>
+              <Id>1</Id>
+              <Name>Adult entry fee</Name>
+              <Amount currency="EUR">10</Amount>
+              <TaxableAmount currency="EUR">8</TaxableAmount>
+            </Fee>
+            <PaidAmount currency="EUR">10</PaidAmount>
+          </AssignedFee>
+          <AssignedFee>
+            <Fee>
+              <Id>3</Id>
+              <Name>Late entry fee</Name>
+              <Amount currency="EUR">4</Amount>
+            </Fee>
+            <PaidAmount currency="EUR">4</PaidAmount>
+          </AssignedFee>
+        </Result>
+      </PersonResult>
+    </ClassResult1>
+  </ClassResults>
+</ResultList>
