@@ -36,7 +36,9 @@ def class_result_parser(root):
     r_l = copy.deepcopy(result_list)
     event = copy.deepcopy(ET.ElementTree(root.find("Event"))).getroot()
     r_l.append(event)
+    index : int = 0
     for i in root.findall("ClassResult"):
+        i.tag = "ClassResult" + str(index)
         c_r_s.append(i)
     r_l.append(c_r_s)
     return r_l

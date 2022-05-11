@@ -9,7 +9,7 @@
 			<Time>19:00:00</Time>
 		</EndTime>
 	</Event>
-	<ClassResults><ClassResult>
+	<ClassResults><ClassResult0>
 		<Class>
 			<Id>ME</Id>
 			<Name>M ELITE</Name>
@@ -8082,8 +8082,8 @@
 				<ControlCard>0</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>WE</Id>
 			<Name>W ELITE</Name>
@@ -12314,8 +12314,8 @@
 				<ControlCard>8211297</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M12</Id>
 			<Name>M 12</Name>
@@ -13127,8 +13127,8 @@
 				<ControlCard>8330300</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M14</Id>
 			<Name>M 13/14</Name>
@@ -14142,8 +14142,8 @@
 				<ControlCard>8060934</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M16</Id>
 			<Name>M 15/16</Name>
@@ -16277,8 +16277,8 @@
 				<ControlCard>8001443</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M18</Id>
 			<Name>M 17/18</Name>
@@ -19511,8 +19511,8 @@
 				<ControlCard>8011635</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M20</Id>
 			<Name>M 19/20</Name>
@@ -21043,8 +21043,8 @@
 				<ControlCard>2061267</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M35</Id>
 			<Name>M 35</Name>
@@ -22472,8 +22472,8 @@
 				<ControlCard>210360</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M40</Id>
 			<Name>M 40</Name>
@@ -23690,8 +23690,8 @@
 				<ControlCard>8000533</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M45</Id>
 			<Name>M 45</Name>
@@ -25486,8 +25486,8 @@
 				<ControlCard>0</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M50</Id>
 			<Name>M 50</Name>
@@ -27869,8 +27869,8 @@
 				<ControlCard>206429</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M55</Id>
 			<Name>M 55</Name>
@@ -30340,8 +30340,8 @@
 				<ControlCard>8020866</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M60</Id>
 			<Name>M 60</Name>
@@ -31768,8 +31768,8 @@
 				<ControlCard>8001735</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M65</Id>
 			<Name>M 65</Name>
@@ -32698,8 +32698,8 @@
 				<ControlCard>210554</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M70</Id>
 			<Name>M 70</Name>
@@ -34150,8 +34150,8 @@
 				<ControlCard>8001433</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M75</Id>
 			<Name>M 75</Name>
@@ -34755,8 +34755,8 @@
 				<ControlCard>2800444</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>MB</Id>
 			<Name>M B</Name>
@@ -35044,8 +35044,8 @@
 				<ControlCard>210345</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W12</Id>
 			<Name>W 12</Name>
@@ -35930,8 +35930,8 @@
 				<ControlCard>8515567</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W14</Id>
 			<Name>W 13/14</Name>
@@ -37030,8 +37030,8 @@
 				<ControlCard>2013165</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W16</Id>
 			<Name>W 15/16</Name>
@@ -38798,8 +38798,8 @@
 				<ControlCard>2083459</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W18</Id>
 			<Name>W 17/18</Name>
@@ -40573,8 +40573,8 @@
 				<ControlCard>2083452</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W20</Id>
 			<Name>W 19/20</Name>
@@ -41352,8 +41352,8 @@
 				<ControlCard>2036156</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W35</Id>
 			<Name>W 35</Name>
@@ -41992,8 +41992,8 @@
 				<ControlCard>7505090</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W40</Id>
 			<Name>W 40</Name>
@@ -43118,8 +43118,8 @@
 				<ControlCard>8001021</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W45</Id>
 			<Name>W 45</Name>
@@ -43929,8 +43929,8 @@
 				<ControlCard>8009143</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W50</Id>
 			<Name>W 50</Name>
@@ -45265,8 +45265,8 @@
 				<ControlCard>7208139</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W55</Id>
 			<Name>W 55</Name>
@@ -46254,8 +46254,8 @@
 				<ControlCard>210849</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W60</Id>
 			<Name>W 60</Name>
@@ -47454,8 +47454,8 @@
 				<ControlCard>211349</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W65</Id>
 			<Name>W 65</Name>
@@ -48836,8 +48836,8 @@
 				<ControlCard>8330716</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W70</Id>
 			<Name>W 70</Name>
@@ -49123,8 +49123,8 @@
 				<ControlCard>1006222</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W75</Id>
 			<Name>W 75</Name>
@@ -49596,8 +49596,8 @@
 				<ControlCard>8003209</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>WB</Id>
 			<Name>W B</Name>
@@ -49758,8 +49758,8 @@
 				<ControlCard>205696</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>M10</Id>
 			<Name>M 10</Name>
@@ -50526,8 +50526,8 @@
 				<ControlCard>4616033</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>W10</Id>
 			<Name>W 10</Name>
@@ -50950,8 +50950,8 @@
 				<ControlCard>210786</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
-	<ClassResult>
+	</ClassResult0>
+	<ClassResult0>
 		<Class>
 			<Id>DIR</Id>
 			<Name>DIRECT</Name>
@@ -51779,5 +51779,5 @@
 				<ControlCard>7204771</ControlCard>
 			</Result>
 		</PersonResult>
-	</ClassResult>
+	</ClassResult0>
 </ClassResults></ResultList>
