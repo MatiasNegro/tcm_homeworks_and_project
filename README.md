@@ -1,7 +1,3 @@
-## todo
-- rimuovere users login
-- resource register_race
-  - race_name
-  - race_date
-  - email
-- aggiornamento? split-time?
+## Progetto di Tecnologie cloud e mobile
+Greco Daniele - 1065570
+Matias Negro - 1065808
