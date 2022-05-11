@@ -57,7 +57,6 @@ def format_validator(root):
             #print(e)
             flag_type = False
 
-    print(flag)
     return (flag or flag_type)
 
 def name_control(file_name, username):
@@ -129,28 +128,28 @@ def lambda_handler(event, context):
 
                 # conversione da string ad xml
                 root = ET.fromstring(content)
-                root.attrib.clear()
 
-                # inserimento dei <ClassResult> in un unico <ClassResults> per preparare l'inserimento nel database
                 if not format_validator(root):
-                    #COSA FARE SE IL FORMATO NON E' VALIDO
-                    pass
+                    response['Body'] += '\nInvalid Format for file: ' + file_name
+                else:
 
-                # rimozione del namespace
-                xmlstr = ET.tostring(root, encoding='utf8', method='xml')
-                xmlstr = xmlstr.decode("utf8")
-                content = re.sub(' xmlns:ns0="[^"]+"', '', xmlstr, count=1)
-                content = content.replace('ns0:', '')
+                    root.attrib.clear()
 
-                # inserimento nel bucket
-                try:
-                    s3_response = s3_client.put_object(Bucket=BUCKET_NAME, Key=(
-                        prefix+file_name), Body=content, Metadata={'uploader': username, 'email': email})
-                    logger.info('S3 Response: {}'.format(s3_response))
-                    response['body'] += "\n" + file_name
+                    # rimozione del namespace
+                    xmlstr = ET.tostring(root, encoding='utf8', method='xml')
+                    xmlstr = xmlstr.decode("utf8")
+                    content = re.sub(' xmlns:ns0="[^"]+"', '', xmlstr, count=1)
+                    content = content.replace('ns0:', '')
 
-                except Exception as e:
-                    raise IOError(e)
+                    # inserimento nel bucket
+                    try:
+                        s3_response = s3_client.put_object(Bucket=BUCKET_NAME, Key=(
+                            prefix+file_name), Body=content, Metadata={'uploader': username, 'email': email})
+                        logger.info('S3 Response: {}'.format(s3_response))
+                        response['body'] += "\n" + file_name
+
+                    except Exception as e:
+                        raise IOError(e)
 
             else:
                 # se l'utente non ha i permessi
