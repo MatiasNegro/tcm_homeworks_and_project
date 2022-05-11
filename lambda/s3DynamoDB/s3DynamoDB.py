@@ -21,6 +21,7 @@ def class_result_parser(root):
     index : int = 0
     for i in root.findall("ClassResult"):
         i.tag = "ClassResult" + str(index)
+        index += 1
         c_r_s.append(i)
     r_l.append(c_r_s)
     return r_l
