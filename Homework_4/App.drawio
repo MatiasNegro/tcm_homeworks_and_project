@@ -1,0 +1,165 @@
+<mxfile host="65bd71144e">
+    <diagram id="n_AqEDEP2N4CuWTsN06e" name="Page-1">
+        <mxGraphModel dx="1282" dy="1364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="583" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-680" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-540" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="GARA" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-600" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-480" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-420" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="NAVBAR" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-650" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-440" y="-319.16668701171875" as="sourcePoint"/>
+                        <mxPoint x="-440" y="-620" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Scaffold +&lt;br&gt;Column" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-510" y="-590" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-230" y="-590" as="sourcePoint"/>
+                        <mxPoint x="-160" y="-590" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="Card con Button e Text&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-190" y="-612.5" width="110" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="HOMEPAGE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-350" y="-730" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-360" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-200" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="NOME GARA" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-170" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Button" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iButtonBack;strokeColor=#444444;fontColor=#ffffff;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;spacingLeft=10;whiteSpace=wrap;align=center;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="-393.5" y="-162.5" width="43.5" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-130" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-70" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="-10" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="50" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="110" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="-200" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="NOME GARA" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="-147.5" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="Button" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iButtonBack;strokeColor=#444444;fontColor=#ffffff;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;spacingLeft=10;whiteSpace=wrap;align=center;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="-33.5" y="-140" width="43.5" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="-110" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="-50" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="10" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="70" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="ClassResult" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="130" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="ClassResult Page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-380" y="-260" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;shadow=0;dashed=0;shape=mxgraph.ios7.icons.reload;" vertex="1" parent="1">
+                    <mxGeometry x="48" y="-189" width="24" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="-190" as="sourcePoint"/>
+                        <mxPoint x="200" y="-80" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="Swipe verso il basso per refreshare le class result" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="-95" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-680" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-540" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="GARA" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-600" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-480" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-420" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="NAVBAR" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-650" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="52">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="142.00000000000023" y="-590" as="sourcePoint"/>
+                        <mxPoint x="212" y="-590" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="Card con Button e Text&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="182" y="-612.5" width="110" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="HOMEPAGE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="-730" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(42, 42, 42); display: inline; float: none;&quot;&gt;GARA&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-28" y="-360" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-470" width="200" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="61" target="65">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="-389.71428571428567" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="Start List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-450" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Results (IF AVAILABLE)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-380" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="-404.71428571428567" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
