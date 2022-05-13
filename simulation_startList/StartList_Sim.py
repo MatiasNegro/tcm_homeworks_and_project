@@ -15,8 +15,8 @@ class_start_base = ET.fromstring('<ClassStart></ClassStart>')
 
 def format_validator(root):
     source_file = ET.tostring(root)
-    schema_file = 'schema.xsd'
-    schema_file_type = 'schema_type.xsd'
+    schema_file = 'simulation_startList/schema.xsd'
+    schema_file_type = 'simulation_startList/schema_type.xsd'
     flag = True
     flag_type = True
 
@@ -89,6 +89,7 @@ def start_list_sim(root):
     
     ET.ElementTree(start_list).write('simulation_startList/Result_of_Simulation/start_list_unparsed/' + str(index))
     index = 0
+    print("UNPARSED: " + str(format_validator(start_list)))
     pass
 
 def start_list_parsed(root):
@@ -137,4 +138,5 @@ def start_list_parsed(root):
     start_list.append(classes_list)
     ET.ElementTree(start_list).write('simulation_startList/Result_of_Simulation/start_list_parsed/' + str(index))
     index = 0
+    print("PARSED: " + str(format_validator(start_list)))
     pass
