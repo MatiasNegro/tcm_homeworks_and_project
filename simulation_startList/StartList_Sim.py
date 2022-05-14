@@ -1,3 +1,4 @@
+from datetime import datetime
 from lxml import etree
 import xml.etree.ElementTree as ET
 import copy
@@ -6,6 +7,12 @@ import random as rand
 #default variables
 
 start_list_base = ET.fromstring('<StartList></StartList>')
+start_list_base.set('xmlns', 'http://www.orienteering.org/datastandard/3.0')
+start_list_base.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+start_list_base.set('iofVersion', '3.0')
+start_list_base.set('createTime', str(datetime.now))
+start_list_base.set('creator', 'SimulationSoftware')
+
 start_classes_base = ET.fromstring('<StartClasses></StartClasses>')
 start_class_base = ET.fromstring('<StartClass></StartClass>')
 start_name_base = ET.fromstring('<StartName></StartName>')
@@ -15,8 +22,8 @@ class_start_base = ET.fromstring('<ClassStart></ClassStart>')
 
 def format_validator(root):
     source_file = ET.tostring(root)
-    schema_file = 'simulation_startList/schema.xsd'
-    schema_file_type = 'simulation_startList/schema_type.xsd'
+    schema_file = '../simulation_startList/schema.xsd'
+    schema_file_type = '../simulation_startList/schema_type.xsd'
     flag = True
     flag_type = True
 
@@ -34,13 +41,15 @@ def format_validator(root):
         except etree.XMLSyntaxError as e:
             # this exception is thrown on schema validation error
             # print(e) è solo per eventuale debugging
-            #print(e)
+            print("PARSER")
+            print(e)
             flag = False
         
         try:
             doc = etree.fromstring(source_file, parser_type)
         except etree.XMLSyntaxError as e:
-            #print(e)
+            print("PARSER_TYPE")
+            print(e)
             flag_type = False
 
     return (flag or flag_type)
@@ -87,7 +96,7 @@ def start_list_sim(root):
         index += 1
         start_list.append(new_class_start)
     
-    ET.ElementTree(start_list).write('simulation_startList/Result_of_Simulation/start_list_unparsed/' + str(index))
+    ET.ElementTree(start_list).write('../simulation_startList/Result_of_Simulation/start_list_unparsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList')
     index = 0
     print("UNPARSED: " + str(format_validator(start_list)))
     pass
@@ -136,7 +145,6 @@ def start_list_parsed(root):
         index += 1
         classes_list.append(new_class_start)
     start_list.append(classes_list)
-    ET.ElementTree(start_list).write('simulation_startList/Result_of_Simulation/start_list_parsed/' + str(index))
+    ET.ElementTree(start_list).write('../simulation_startList/Result_of_Simulation/start_list_parsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList')
     index = 0
-    print("PARSED: " + str(format_validator(start_list)))
     pass

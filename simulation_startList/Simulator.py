@@ -17,17 +17,17 @@ person_result_xml = ET.fromstring("<PersonResult></PersonResult>")
 class_result_xml = ET.fromstring("<ClassResult></ClassResult>")
 
 # Files
-event_base = ET.parse("simulation_startList/xmls/Event.xml")
-class_base = ET.parse("simulation_startList/xmls/Class.xml")
-course_base = ET.parse("simulation_startList/xmls/Course.xml")
-person_base = ET.parse("simulation_startList/xmls/Person.xml")
-organisation_base = ET.parse("simulation_startList/xmls/Organisation.xml")
-result_base = ET.parse("simulation_startList/xmls/Result.xml")
-split_time_base = ET.parse("simulation_startList/xmls/SplitTime.xml")
-control_card_base = ET.parse("simulation_startList/xmls/ControlCard.xml")
-route_base = ET.parse("simulation_startList/xmls/Route.xml")
-assigned_fee_base = ET.parse("simulation_startList/xmls/AssignedFee.xml")
-service_request_base = ET.parse("simulation_startList/xmls/ServiceRequest.xml")
+event_base = ET.parse("../simulation_startList/xmls/Event.xml")
+class_base = ET.parse("../simulation_startList/xmls/Class.xml")
+course_base = ET.parse("../simulation_startList/xmls/Course.xml")
+person_base = ET.parse("../simulation_startList/xmls/Person.xml")
+organisation_base = ET.parse("../simulation_startList/xmls/Organisation.xml")
+result_base = ET.parse("../simulation_startList/xmls/Result.xml")
+split_time_base = ET.parse("../simulation_startList/xmls/SplitTime.xml")
+control_card_base = ET.parse("../simulation_startList/xmls/ControlCard.xml")
+route_base = ET.parse("../simulation_startList/xmls/Route.xml")
+assigned_fee_base = ET.parse("../simulation_startList/xmls/AssignedFee.xml")
+service_request_base = ET.parse("../simulation_startList/xmls/ServiceRequest.xml")
 
 # Attributes
 
@@ -206,10 +206,10 @@ def simulation(num):
         el_tree = ET.ElementTree(i)
         name = el_tree.find("Event").find(
             "Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
-        el_tree.write('simulation_startList/Result_of_Simulation/simulation/' + name, encoding='utf-8')
+        el_tree.write('../simulation_startList/Result_of_Simulation/simulation/' + name, encoding='utf-8')
         
         #multithreading
 
         my_thread = threading.Thread(target= SS.start_list_sim(el_tree.getroot()))
 
-simulation(1)
+simulation(3)
