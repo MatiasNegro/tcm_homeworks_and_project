@@ -23,6 +23,10 @@ def uploadFiles(identityToken):
     def clearFiles():
         for f in files:
             os.remove(f)
+        for s in os.listdir('Result_Of_Simulation/start_list_parsed'):
+            os.remove(os.path.join(os.curdir + '/Result_Of_Simulation/start_list_parsed', s))
+        for h in os.listdir('Result_Of_Simulation/start_list_unparsed'):
+            os.remove(os.path.join(os.curdir + '/Result_Of_Simulation/start_list_unparsed', h))
         files.clear()
         labelFileName.configure(text="")
         global flagClear
@@ -33,8 +37,8 @@ def uploadFiles(identityToken):
             nSim = number_generation.get("1.0", END + "-1c")
             nSim = int(nSim)
             Simulator.simulation(nSim)
-            for f in os.listdir('Result_Of_Simulation'):
-                path = os.path.join(os.curdir + '/Result_Of_Simulation', f)
+            for f in os.listdir('Result_Of_Simulation/simulation'):
+                path = os.path.join(os.curdir + '/Result_Of_Simulation/simulation', f)
                 files.append(path)
                 labelFileName.configure(text=labelFileName.cget("text") + f + "\n")
                 generateFileSeparator(path)

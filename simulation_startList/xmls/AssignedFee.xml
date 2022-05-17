@@ -1,8 +1,0 @@
-<AssignedFee>
-    <Fee>
-        <Id></Id>
-        <Name></Name>
-        <Amount currency="EUR"></Amount>
-        <TaxableAmount currency="EUR"></TaxableAmount>
-    </Fee>
-</AssignedFee>

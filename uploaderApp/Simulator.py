@@ -7,6 +7,8 @@ import names
 import randomtimestamp
 import country_code as cd
 import copy
+import threading
+import StartList_Sim as SS
 
 
 # Base xmls
@@ -204,4 +206,8 @@ def simulation(num):
         el_tree = ET.ElementTree(i)
         name = el_tree.find("Event").find(
             "Name").text + el_tree.find("Event").find("StartTime").find("Date").text + '.xml'
-        el_tree.write('Result_of_Simulation/' + name, encoding='utf-8')
+        el_tree.write('Result_of_Simulation/simulation/' + name, encoding='utf-8')
+        
+        #multithreading
+
+        my_thread = threading.Thread(target= SS.start_list_sim(el_tree.getroot()))
