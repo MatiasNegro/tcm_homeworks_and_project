@@ -96,7 +96,7 @@ def start_list_sim(root):
         index += 1
         start_list.append(new_class_start)
     
-    ET.ElementTree(start_list).write('Result_of_Simulation/start_list_unparsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList')
+    ET.ElementTree(start_list).write('Result_of_Simulation/start_list_unparsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList.xml')
     index = 0
     #print("UNPARSED: " + str(format_validator(start_list)))
     pass
@@ -145,6 +145,6 @@ def start_list_parsed(root):
         index += 1
         classes_list.append(new_class_start)
     start_list.append(classes_list)
-    ET.ElementTree(start_list).write('Result_of_Simulation/start_list_parsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList')
+    ET.ElementTree(start_list).write('Result_of_Simulation/start_list_parsed/' + start_list.find("Event").find("Name").text + start_list.find("Event").find("StartTime").find("Date").text + 'StartList.xml')
     index = 0
     pass

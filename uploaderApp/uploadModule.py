@@ -21,8 +21,8 @@ def uploadFiles(identityToken):
         )
     
     def clearFiles():
-        for f in files:
-            os.remove(f)
+        for f in os.listdir('Result_Of_Simulation/simulation'):
+            os.remove(os.path.join(os.curdir + '/Result_Of_Simulation/simulation', f))
         for s in os.listdir('Result_Of_Simulation/start_list_parsed'):
             os.remove(os.path.join(os.curdir + '/Result_Of_Simulation/start_list_parsed', s))
         for h in os.listdir('Result_Of_Simulation/start_list_unparsed'):
