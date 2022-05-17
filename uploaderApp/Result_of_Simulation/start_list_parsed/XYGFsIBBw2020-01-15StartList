@@ -1,0 +1,161 @@
+<StartList xmlns="http://www.orienteering.org/datastandard/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" iofVersion="3.0" createTime="&lt;built-in method now of type object at 0x104b34968&gt;" creator="SimulationSoftware"><Event>
+    <Name>XYGFsIBBw</Name>
+    <StartTime>
+        <Date>2020-01-15</Date>
+        <Time>11:16:33</Time>
+    </StartTime>
+    <EndTime>
+        <Date>2020-01-16</Date>
+        <Time>18:34:04</Time>
+    </EndTime>
+</Event><StartClasses><ClassStart0><Class>
+    <Id>ZCXfqATjK</Id>
+    <Name>iTALQOedw</Name>
+</Class><Course>
+    <Length>1505</Length>
+    <Climb>820</Climb>
+</Course><StartName>StartName0</StartName><PersonStart><EntryId>6451</EntryId><Person>
+    <Id>qSJyajazB</Id>
+    <Name>
+        <Family>Lewis</Family>
+        <Given>Stanley</Given>
+    </Name>
+</Person><Organisation>
+    <Id>ZTxTbbEZl</Id>
+    <Name>ffOubXcio</Name>
+    <Country code="GBR">SZ</Country>
+</Organisation><Start><BibNumber>10</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>38406</ControlCard></Start></PersonStart><PersonStart><EntryId>1972</EntryId><Person>
+    <Id>tiGYUIQwy</Id>
+    <Name>
+        <Family>Bergeron</Family>
+        <Given>Antionette</Given>
+    </Name>
+</Person><Organisation>
+    <Id>sPPYmEiVV</Id>
+    <Name>OVEeSZBuJ</Name>
+    <Country code="GBR">BG</Country>
+</Organisation><Start><BibNumber>0</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>56827</ControlCard></Start></PersonStart></ClassStart0><ClassStart1><Class>
+    <Id>mmDkkXaKq</Id>
+    <Name>ZwwcSXxlm</Name>
+</Class><Course>
+    <Length>1994</Length>
+    <Climb>838</Climb>
+</Course><StartName>StartName1</StartName><PersonStart><EntryId>7413</EntryId><Person>
+    <Id>MpdXsELpE</Id>
+    <Name>
+        <Family>Greathouse</Family>
+        <Given>Paul</Given>
+    </Name>
+</Person><Organisation>
+    <Id>iwvEhheZE</Id>
+    <Name>iWEkXHcka</Name>
+    <Country code="GBR">KY</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>68236</ControlCard></Start></PersonStart></ClassStart1><ClassStart2><Class>
+    <Id>Kbanimzsu</Id>
+    <Name>oqeGAqNWk</Name>
+</Class><Course>
+    <Length>288</Length>
+    <Climb>569</Climb>
+</Course><StartName>StartName2</StartName><PersonStart><EntryId>1790</EntryId><Person>
+    <Id>duhOJPwjv</Id>
+    <Name>
+        <Family>Higley</Family>
+        <Given>Morris</Given>
+    </Name>
+</Person><Organisation>
+    <Id>qQtLBUPuT</Id>
+    <Name>EkULeDLqs</Name>
+    <Country code="GBR">GA</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>25099</ControlCard></Start></PersonStart><PersonStart><EntryId>4944</EntryId><Person>
+    <Id>YYxvItogH</Id>
+    <Name>
+        <Family>Pulley</Family>
+        <Given>Charlie</Given>
+    </Name>
+</Person><Organisation>
+    <Id>CJNNViFlI</Id>
+    <Name>xqbUKhvWZ</Name>
+    <Country code="GBR">GH</Country>
+</Organisation><Start><BibNumber>6</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>17697</ControlCard></Start></PersonStart></ClassStart2><ClassStart3><Class>
+    <Id>kflUCKLxB</Id>
+    <Name>fjamFWdDt</Name>
+</Class><Course>
+    <Length>1683</Length>
+    <Climb>388</Climb>
+</Course><StartName>StartName3</StartName><PersonStart><EntryId>3087</EntryId><Person>
+    <Id>oAMZTGyqj</Id>
+    <Name>
+        <Family>Miller</Family>
+        <Given>Chance</Given>
+    </Name>
+</Person><Organisation>
+    <Id>gtwUkeEqi</Id>
+    <Name>CJQlFZuvZ</Name>
+    <Country code="GBR">NZ</Country>
+</Organisation><Start><BibNumber>6</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>73418</ControlCard></Start></PersonStart></ClassStart3><ClassStart4><Class>
+    <Id>SgflMiqiK</Id>
+    <Name>BBTQhBbPh</Name>
+</Class><Course>
+    <Length>1923</Length>
+    <Climb>338</Climb>
+</Course><StartName>StartName4</StartName><PersonStart><EntryId>6477</EntryId><Person>
+    <Id>WCHGqOxVn</Id>
+    <Name>
+        <Family>Kessel</Family>
+        <Given>Tracey</Given>
+    </Name>
+</Person><Organisation>
+    <Id>PzDUpZNmN</Id>
+    <Name>LaXWgjocA</Name>
+    <Country code="GBR">QA</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>55805</ControlCard></Start></PersonStart><PersonStart><EntryId>9201</EntryId><Person>
+    <Id>VTxqVCkot</Id>
+    <Name>
+        <Family>Cooper</Family>
+        <Given>Kurt</Given>
+    </Name>
+</Person><Organisation>
+    <Id>jtlCospVn</Id>
+    <Name>AizfPbwtb</Name>
+    <Country code="GBR">BA</Country>
+</Organisation><Start><BibNumber>0</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>95938</ControlCard></Start></PersonStart><PersonStart><EntryId>9505</EntryId><Person>
+    <Id>BhsEpCpjx</Id>
+    <Name>
+        <Family>Holt</Family>
+        <Given>Melva</Given>
+    </Name>
+</Person><Organisation>
+    <Id>IfpLmiKYZ</Id>
+    <Name>fcIcwDaUL</Name>
+    <Country code="GBR">AF</Country>
+</Organisation><Start><BibNumber>10</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>39497</ControlCard></Start></PersonStart><PersonStart><EntryId>3831</EntryId><Person>
+    <Id>lCmVqnyAI</Id>
+    <Name>
+        <Family>Mccomas</Family>
+        <Given>Leo</Given>
+    </Name>
+</Person><Organisation>
+    <Id>ZgnPPjDeq</Id>
+    <Name>fttHTdvcE</Name>
+    <Country code="GBR">GE</Country>
+</Organisation><Start><BibNumber>2</BibNumber>
+    <StartTime>2020-01-15</StartTime>
+    <ControlCard>34340</ControlCard></Start></PersonStart></ClassStart4></StartClasses></StartList>

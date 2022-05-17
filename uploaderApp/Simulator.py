@@ -211,3 +211,5 @@ def simulation(num):
         #multithreading
 
         my_thread = threading.Thread(target= SS.start_list_sim(el_tree.getroot()))
+
+simulation(1)
