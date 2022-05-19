@@ -1,8 +1,16 @@
-# oriresultsapp
+# http_r_test
 
-Esempio base dell'app per la visualizzazione dei risultati live.
+A new Flutter project.
 
-Ricordarsi di:
+## Getting Started
 
-- aggiungere la dipendenza da http con `flutter pub add http`
-- aggiungere URL pubblico per raggiungere propira API AWS
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
