@@ -8,7 +8,7 @@ import json
 # local env
 import os
 from dotenv import load_dotenv
-
+from pprint import pprint
 # global
 load_dotenv()
 
@@ -35,6 +35,7 @@ def downloadFile():
         }
         url = os.getenv('URL_DOWNLOAD')
         r = requests.get(url, headers=headers)
+        pprint(r.json)
         file = r.content
         file = file.decode('utf-8')
         if('error404' in file):
