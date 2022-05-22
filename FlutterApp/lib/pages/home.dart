@@ -62,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
       setState(() {
+        items.clear();
         items.addAll(newEntries);
         isPerformingRequest = false;
       });
