@@ -74,4 +74,25 @@ class Request {
 
     return toReturn;
   }
+
+  static getResultsOfRaceClass(idRace, className) async {
+    final myQueryParameters = {'id': idRace, 'class': className};
+    print(idRace);
+    final myUrl = apiUrlResults + '?id=' + idRace + '&class=' + className;
+    final response = await http.get(Uri.parse(myUrl));
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      List resultsList = [];
+      var myJson = jsonDecode(response.body) as Map;
+      for (int i = 0; i < myJson.length; i++) {
+        resultsList.add(myJson[i]);
+      }
+      return resultsList;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load classes names');
+    }
+  }
 }

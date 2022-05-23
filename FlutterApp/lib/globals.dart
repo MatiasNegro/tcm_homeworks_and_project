@@ -5,6 +5,6 @@ const apiUrlListRaces =
 const apiUrlListCLasses =
     'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/list_classes';
 
-const apiUrlResults = '';
+const apiUrlResults = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/results';
 
 const apiUrlDownloadFile = 'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/download';

@@ -1,44 +1,43 @@
-import 'package:FlutterApp/pages/results.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:FlutterApp/services/requests.dart';
 
-class Class extends StatelessWidget {
+class Results extends StatelessWidget {
   late String idRace;
-  late String raceName;
+  late String className;
   static String routeName = '/Classes';
 
   @override
   Widget build(BuildContext context) {
     var myArgument = (ModalRoute.of(context)?.settings.arguments) as List;
     this.idRace = myArgument[0];
-    this.raceName = myArgument[1];
+    this.className = myArgument[1];
     return Scaffold(
-      body: MyClassPage(idRace, raceName),
+      body: MyResultsPage(idRace, className),
     );
   }
 }
 
-class MyClassPage extends StatefulWidget {
+class MyResultsPage extends StatefulWidget {
   late String idRace;
-  late String raceName;
+  late String className;
 
-  MyClassPage(toSet0, toSet1) {
+  MyResultsPage(toSet0, toSet1) {
     idRace = toSet0;
-    raceName = toSet1;
+    className = toSet1;
   }
 
   @override
-  _MyClassPageState createState() => _MyClassPageState(idRace, raceName);
+  _MyResultsPageState createState() => _MyResultsPageState(idRace, className);
 }
 
-class _MyClassPageState extends State<MyClassPage> {
+class _MyResultsPageState extends State<MyResultsPage> {
   late String idRace;
-  late String raceName;
+  late String className;
 
-  _MyClassPageState(toSet0, toSet1) {
+  _MyResultsPageState(toSet0, toSet1) {
     this.idRace = toSet0;
-    this.raceName = toSet1;
+    this.className = toSet1;
   }
 
   List items = [];
@@ -66,7 +65,8 @@ class _MyClassPageState extends State<MyClassPage> {
   _getMoreData() async {
     if (!isPerformingRequest) {
       setState(() => isPerformingRequest = true);
-      final List newEntries = await Request.classRequest(idRace);
+      final List newEntries =
+          await Request.getResultsOfRaceClass(idRace, className);
       if (newEntries.isEmpty) {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
@@ -104,7 +104,7 @@ class _MyClassPageState extends State<MyClassPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: Text(raceName),
+        middle: Text(className),
       ),
       body: ListView.builder(
         itemCount: items.length + 1,
@@ -113,19 +113,11 @@ class _MyClassPageState extends State<MyClassPage> {
             return _buildProgressIndicator();
           } else {
             var toText = items[index];
-            var id = toText['id'];
-            var name = toText['Name'];
+            var id = toText['idPlayer'];
             return ListTile(
               title: Text(id),
-              subtitle: Text(name),
               leading: const Icon(Icons.people_alt_rounded),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        settings: RouteSettings(arguments: [idRace, raceName]),
-                        builder: (context) =>  Results()));
-              },
+              onTap: () {},
             );
           }
         },
