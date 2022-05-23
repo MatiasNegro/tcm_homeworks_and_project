@@ -5,3 +5,7 @@ path_provider_ios=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dar
 path_provider_linux=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.6/
 path_provider_macos=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.6/
 path_provider_windows=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.6/
+permission_handler=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-9.2.0/
+permission_handler_android=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_android-9.0.2+1/
+permission_handler_apple=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_apple-9.0.4/
+permission_handler_windows=/Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_windows-0.1.0/

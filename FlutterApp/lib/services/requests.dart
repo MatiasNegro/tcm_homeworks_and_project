@@ -1,5 +1,9 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../globals.dart';
 
 class Request {
@@ -41,5 +45,33 @@ class Request {
       // then throw an exception.
       throw Exception('Failed to load classes names');
     }
+  }
+
+  static Future<bool> downloadFile(raceId) async {
+    var toReturn = false;
+    try {
+      var status = await Permission.storage.request();
+      if (status == PermissionStatus.granted) {
+      } else if (status == PermissionStatus.denied) {
+        print(
+            'Permission denied. Show a dialog and again ask for the permission');
+        return false;
+      } else if (status == PermissionStatus.permanentlyDenied) {
+        print('Take the user to the settings page.');
+        await openAppSettings();
+      }
+
+      var dir = await getApplicationDocumentsDirectory();
+      Response response = await Dio().request(apiUrlDownloadFile,
+          options: Options(method: 'GET', responseType: ResponseType.plain),
+          queryParameters: {'filename': raceId});
+      var myFile = await File(dir.path + '/$raceId.xml').create();
+      myFile.writeAsString(response.data);
+      toReturn = true;
+    } catch (e) {
+      toReturn = false;
+    }
+
+    return toReturn;
   }
 }
