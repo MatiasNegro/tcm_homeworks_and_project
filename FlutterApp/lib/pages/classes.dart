@@ -123,8 +123,9 @@ class _MyClassPageState extends State<MyClassPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        settings: RouteSettings(arguments: [idRace, raceName]),
-                        builder: (context) =>  Results()));
+                        settings:
+                            RouteSettings(arguments: [idRace, toText['id']]),
+                        builder: (context) => Results()));
               },
             );
           }

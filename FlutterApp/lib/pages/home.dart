@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     _getMoreData();
     _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
+      if (_scrollController.position.pixels <=
           _scrollController.position.maxScrollExtent) {
         _getMoreData();
       }
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
-        if (offsetFromBottom < edge) {
+        if (offsetFromBottom > edge) {
           _scrollController.animateTo(
               _scrollController.offset - (edge - offsetFromBottom),
               duration: Duration(milliseconds: 100),
@@ -96,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
         itemCount: items.length + 1,
         itemBuilder: (context, index) {
           if (index == items.length) {
+            items.clear();
             return _buildProgressIndicator();
           } else {
             var toText = items[index];
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Icon(
                   Icons.cloud_download,
-                  size: 40,
+                  size: 35,
                 ),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(CircleBorder()),

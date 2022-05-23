@@ -116,7 +116,7 @@ class _MyResultsPageState extends State<MyResultsPage> {
             var id = toText['idPlayer'];
             return ListTile(
               title: Text(id),
-              leading: const Icon(Icons.people_alt_rounded),
+              leading: const Icon(Icons.person),
               onTap: () {},
             );
           }
