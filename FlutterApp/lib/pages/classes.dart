@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http_r_test/services/requests.dart';
+import 'package:FlutterApp/services/requests.dart';
 
 class Class extends StatelessWidget {
   late String idRace;

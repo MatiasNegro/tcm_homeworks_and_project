@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http_r_test/pages/classes.dart';
-import 'package:http_r_test/services/requests.dart';
+import 'package:FlutterApp/globals.dart';
+import 'package:FlutterApp/pages/classes.dart';
+import 'package:FlutterApp/services/requests.dart';
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(new Home());
 
@@ -59,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
       setState(() {
+        items.clear();
         items.addAll(newEntries);
         isPerformingRequest = false;
       });
@@ -101,8 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
               subtitle: Text("$raceDate"),
               leading: Icon(Icons.emoji_events, size: 45),
               trailing: ElevatedButton(
-                onPressed: () {
-                  print('miao');
+                onPressed: () async {
+                  try {
+                    print(raceId);
+                    var response = Dio().download(
+                        apiUrlDownloadFile + '?filename=$raceId', '.');
+                  } catch (e) {
+                    print(e);
+                  }
                 },
                 child: Icon(
                   Icons.cloud_download,
