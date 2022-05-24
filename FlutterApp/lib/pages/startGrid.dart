@@ -68,7 +68,8 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
       setState(() => isPerformingRequest = true);
       final List newEntries = [];
       //await Request.getStartGridOfRaceClass(idRace, className);
-      if (newEntries.isEmpty) {
+
+      /*if (newEntries.isEmpty) {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
@@ -78,8 +79,9 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
               duration: Duration(milliseconds: 100),
               curve: Curves.easeOut);
         }
-      }
+      }*/
       setState(() {
+        items.clear();
         items.addAll(newEntries);
         isPerformingRequest = false;
       });
@@ -89,13 +91,16 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
   Widget _buildProgressIndicator() {
     double horSize = MediaQuery.of(context).size.width / 2;
     double verSize = MediaQuery.of(context).size.height / 2;
-    return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
-      child: Center(
-        child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
-          child: CircularProgressIndicator(),
+    return RefreshIndicator(
+      onRefresh: _getMoreData(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: horSize / 2, vertical: verSize / 2),
+        child: Center(
+          child: Opacity(
+            opacity: isPerformingRequest ? 0.0 : 0.0,
+            child: CircularProgressIndicator(),
+          ),
         ),
       ),
     );

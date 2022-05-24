@@ -67,7 +67,7 @@ class _MyClassPageState extends State<MyClassPage> {
     if (!isPerformingRequest) {
       setState(() => isPerformingRequest = true);
       final List newEntries = await Request.classRequest(idRace);
-      if (newEntries.isEmpty) {
+      /*if (newEntries.isEmpty) {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
@@ -77,7 +77,7 @@ class _MyClassPageState extends State<MyClassPage> {
               duration: Duration(milliseconds: 100),
               curve: Curves.easeOut);
         }
-      }
+      }*/
       setState(() {
         items.clear();
         items.addAll(newEntries);
@@ -94,7 +94,7 @@ class _MyClassPageState extends State<MyClassPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
+          opacity: isPerformingRequest ? 0.0 : 0.0,
           child: CircularProgressIndicator(),
         ),
       ),
@@ -103,35 +103,38 @@ class _MyClassPageState extends State<MyClassPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CupertinoNavigationBar(
-        middle: Text(raceName),
-      ),
-      body: ListView.builder(
-        itemCount: items.length + 1,
-        itemBuilder: (context, index) {
-          if (index == items.length) {
-            return _buildProgressIndicator();
-          } else {
-            var toText = items[index];
-            var id = toText['id'];
-            var name = toText['Name'];
-            return ListTile(
-              title: Text(id),
-              subtitle: Text(name),
-              leading: const Icon(Icons.people_alt_rounded),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        settings:
-                            RouteSettings(arguments: [idRace, toText['id']]),
-                        builder: (context) => Results()));
-              },
-            );
-          }
-        },
-        controller: _scrollController,
+    return RefreshIndicator(
+      onRefresh: () => _getMoreData(),
+      child: Scaffold(
+        appBar: CupertinoNavigationBar(
+          middle: Text(raceName),
+        ),
+        body: ListView.builder(
+          itemCount: items.length + 1,
+          itemBuilder: (context, index) {
+            if (index == items.length) {
+              return _buildProgressIndicator();
+            } else {
+              var toText = items[index];
+              var id = toText['id'];
+              var name = toText['Name'];
+              return ListTile(
+                title: Text(id),
+                subtitle: Text(name),
+                leading: const Icon(Icons.people_alt_rounded),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          settings:
+                              RouteSettings(arguments: [idRace, toText['id']]),
+                          builder: (context) => Results()));
+                },
+              );
+            }
+          },
+          controller: _scrollController,
+        ),
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'package:FlutterApp/services/requests.dart';
 class Results extends StatelessWidget {
   late String idRace;
   late String className;
-  static String routeName = '/Classes';
+  static String routeName = '/results';
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class _MyResultsPageState extends State<MyResultsPage> {
       setState(() => isPerformingRequest = true);
       final List newEntries =
           await Request.getResultsOfRaceClass(idRace, className);
-      if (newEntries.isEmpty) {
+      /*if (newEntries.isEmpty) {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
@@ -77,8 +77,9 @@ class _MyResultsPageState extends State<MyResultsPage> {
               duration: Duration(milliseconds: 100),
               curve: Curves.easeOut);
         }
-      }
+      }*/
       setState(() {
+        items.clear();
         items.addAll(newEntries);
         isPerformingRequest = false;
       });
@@ -93,7 +94,7 @@ class _MyResultsPageState extends State<MyResultsPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
+          opacity: isPerformingRequest ? 0.0 : 0.0,
           child: CircularProgressIndicator(),
         ),
       ),
@@ -102,33 +103,37 @@ class _MyResultsPageState extends State<MyResultsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CupertinoNavigationBar(
-        middle: Text(className),
-      ),
-      body: ListView.builder(
-        itemCount: items.length + 1,
-        itemBuilder: (context, index) {
-          if (index == items.length) {
-            return _buildProgressIndicator();
-          } else {
-            var toText = items[index];
-            var id = toText['idPlayer'];
-            return ListTile(
-              title: Text(id),
-              leading: const Icon(Icons.person),
-              onTap: () {},
-            );
-          }
-        },
-        controller: _scrollController,
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.dataset),
-        onPressed: () {
-          showDialog(
-              context: context, builder: (_) => imageDialog('images/bird.jpg'));
-        },
+    return RefreshIndicator(
+      onRefresh: () => _getMoreData(),
+      child: Scaffold(
+        appBar: CupertinoNavigationBar(
+          middle: Text(className),
+        ),
+        body: ListView.builder(
+          itemCount: items.length + 1,
+          itemBuilder: (context, index) {
+            if (index == items.length) {
+              return _buildProgressIndicator();
+            } else {
+              var toText = items[index];
+              var id = toText['idPlayer'];
+              return ListTile(
+                title: Text(id),
+                leading: const Icon(Icons.person),
+                onTap: () {},
+              );
+            }
+          },
+          controller: _scrollController,
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.dataset),
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (_) => imageDialog('images/bird.jpg'));
+          },
+        ),
       ),
     );
   }

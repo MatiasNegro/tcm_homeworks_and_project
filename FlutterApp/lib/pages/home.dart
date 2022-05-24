@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!isPerformingRequest) {
       setState(() => isPerformingRequest = true);
       final List newEntries = await Request.raceNameRequest();
-      if (newEntries.isEmpty) {
+      /*if (newEntries.isEmpty) {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               duration: Duration(milliseconds: 100),
               curve: Curves.easeOut);
         }*/
-      }
+      }*/
       setState(() {
         items.clear();
         items.addAll(newEntries);
