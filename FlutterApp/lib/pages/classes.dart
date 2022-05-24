@@ -79,6 +79,7 @@ class _MyClassPageState extends State<MyClassPage> {
         }
       }
       setState(() {
+        items.clear();
         items.addAll(newEntries);
         isPerformingRequest = false;
       });

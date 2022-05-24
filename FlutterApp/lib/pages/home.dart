@@ -8,6 +8,7 @@ import 'package:FlutterApp/services/requests.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:refresh_indicator_custom/refresh_indicator_custom.dart';
 
 void main() => runApp(new Home());
 
@@ -35,12 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _getMoreData();
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels <=
-          _scrollController.position.maxScrollExtent) {
-        _getMoreData();
-      }
-    });
   }
 
   @override
@@ -57,12 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
         double edge = 50.0;
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
-        if (offsetFromBottom > edge) {
+        /*if (offsetFromBottom > edge) {
           _scrollController.animateTo(
               _scrollController.offset - (edge - offsetFromBottom),
               duration: Duration(milliseconds: 100),
               curve: Curves.easeOut);
-        }
+        }*/
       }
       setState(() {
         items.clear();
@@ -116,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
+          opacity: isPerformingRequest ? 0.0 : 0.0,
           child: CircularProgressIndicator(),
         ),
       ),
@@ -125,58 +120,56 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CupertinoNavigationBar(
-        middle: Text("Race Manager"),
-      ),
-      body: ListView.builder(
-        itemCount: items.length + 1,
-        itemBuilder: (context, index) {
-          if (index == items.length) {
-            items.clear();
-            return _buildProgressIndicator();
-          } else {
-            var toText = items[index];
-            var raceName = toText['race_name'];
-            var raceDate = toText['race_date'];
-            var raceId = toText['race_id'];
-            return ListTile(
-              title: Text("$raceName"),
-              subtitle: Text("$raceDate"),
-              leading: Icon(Icons.emoji_events, size: 45),
-              trailing: ElevatedButton(
-                onPressed: () async {
-                  Request.downloadFile(raceId);
+    return RefreshIndicator(
+      edgeOffset: 100.0,
+      onRefresh: () => _getMoreData(),
+      child: Scaffold(
+        appBar: const CupertinoNavigationBar(
+          middle: Text("Race Manager"),
+        ),
+        body: ListView.builder(
+          itemCount: items.length + 1,
+          itemBuilder: (context, index) {
+            if (index == items.length) {
+              //items.clear();
+              return _buildProgressIndicator();
+            } else {
+              var toText = items[index];
+              var raceName = toText['race_name'];
+              var raceDate = toText['race_date'];
+              var raceId = toText['race_id'];
+              return ListTile(
+                title: Text("$raceName"),
+                subtitle: Text("$raceDate"),
+                leading: Icon(Icons.emoji_events, size: 45),
+                trailing: ElevatedButton(
+                  onPressed: () async {
+                    Request.downloadFile(raceId);
+                  },
+                  child: Icon(
+                    Icons.cloud_download,
+                    size: 35,
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(7)),
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.blue), // <-- Button color
+                    overlayColor:
+                        MaterialStateProperty.resolveWith<Color?>((states) {
+                      if (states.contains(MaterialState.pressed))
+                        return Colors.blue[50]; // <-- Splash color
+                    }),
+                  ),
+                ),
+                onTap: () {
+                  _showActionSheet(context, raceId, raceName);
                 },
-                child: Icon(
-                  Icons.cloud_download,
-                  size: 35,
-                ),
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(CircleBorder()),
-                  padding: MaterialStateProperty.all(EdgeInsets.all(7)),
-                  backgroundColor: MaterialStateProperty.all(
-                      Colors.blue), // <-- Button color
-                  overlayColor:
-                      MaterialStateProperty.resolveWith<Color?>((states) {
-                    if (states.contains(MaterialState.pressed))
-                      return Colors.blue[50]; // <-- Splash color
-                  }),
-                ),
-              ),
-              onTap: () {
-                /*Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        settings: RouteSettings(arguments: [raceId, raceName]),
-                        builder: (context) => new Class()));
-*/
-                _showActionSheet(context, raceId, raceName);
-              },
-            );
-          }
-        },
-        controller: _scrollController,
+              );
+            }
+          },
+          controller: _scrollController,
+        ),
       ),
     );
   }

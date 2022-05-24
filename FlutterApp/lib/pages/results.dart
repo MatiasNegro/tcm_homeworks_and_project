@@ -136,8 +136,8 @@ class _MyResultsPageState extends State<MyResultsPage> {
   imageDialog(String s) {
     return CupertinoAlertDialog(
         content: Container(
-      height: 250,
-      width: 250,
+      height: 250.0,
+      width: 250.0,
       child: Image.asset('images/bird.jpg'),
     ));
   }

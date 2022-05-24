@@ -41,6 +41,7 @@ dependencies:
   path_provider: ^2.0.10
   permission_handler: ^9.2.0
   open_file: ^3.2.1
+  refresh_indicator_custom: ^0.0.2
 
 dev_dependencies:
   flutter_test:
