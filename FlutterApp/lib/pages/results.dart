@@ -123,6 +123,22 @@ class _MyResultsPageState extends State<MyResultsPage> {
         },
         controller: _scrollController,
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.dataset),
+        onPressed: () {
+          showDialog(
+              context: context, builder: (_) => imageDialog('images/bird.jpg'));
+        },
+      ),
     );
+  }
+
+  imageDialog(String s) {
+    return CupertinoAlertDialog(
+        content: Container(
+      height: 250,
+      width: 250,
+      child: Image.asset('images/bird.jpg'),
+    ));
   }
 }

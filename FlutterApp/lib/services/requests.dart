@@ -1,10 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:FlutterApp/pages/startList.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../globals.dart';
+import 'package:open_file/open_file.dart';
 
 class Request {
   static Future<List> raceNameRequest() async {
@@ -97,5 +100,10 @@ class Request {
       // then throw an exception.
       throw Exception('Failed to load results names');
     }
+  }
+
+  static getStartListRequest(idRace) async {
+    ;
+    return 0;
   }
 }

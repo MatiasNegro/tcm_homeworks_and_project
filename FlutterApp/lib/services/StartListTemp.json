@@ -1,0 +1,311 @@
+{
+    "StartList": {
+        "-xmlns": "http://www.orienteering.org/datastandard/3.0",
+        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "-iofVersion": "3.0",
+        "-createTime": "<built-in method now of type object at 0x104b34968>",
+        "-creator": "SimulationSoftware",
+        "Event": {
+            "Name": "XYGFsIBBw",
+            "StartTime": {
+                "Date": "2020-01-15",
+                "Time": "11:16:33"
+            },
+            "EndTime": {
+                "Date": "2020-01-16",
+                "Time": "18:34:04"
+            }
+        },
+        "StartClasses": {
+            "ClassStart0": {
+                "Class": {
+                    "Id": "ZCXfqATjK",
+                    "Name": "iTALQOedw"
+                },
+                "Course": {
+                    "Length": "1505",
+                    "Climb": "820"
+                },
+                "StartName": "StartName0",
+                "PersonStart": [{
+                        "EntryId": "6451",
+                        "Person": {
+                            "Id": "qSJyajazB",
+                            "Name": {
+                                "Family": "Lewis",
+                                "Given": "Stanley"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "ZTxTbbEZl",
+                            "Name": "ffOubXcio",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "SZ"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "10",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "38406"
+                        }
+                    },
+                    {
+                        "EntryId": "1972",
+                        "Person": {
+                            "Id": "tiGYUIQwy",
+                            "Name": {
+                                "Family": "Bergeron",
+                                "Given": "Antionette"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "sPPYmEiVV",
+                            "Name": "OVEeSZBuJ",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "BG"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "0",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "56827"
+                        }
+                    }
+                ]
+            },
+            "ClassStart1": {
+                "Class": {
+                    "Id": "mmDkkXaKq",
+                    "Name": "ZwwcSXxlm"
+                },
+                "Course": {
+                    "Length": "1994",
+                    "Climb": "838"
+                },
+                "StartName": "StartName1",
+                "PersonStart": {
+                    "EntryId": "7413",
+                    "Person": {
+                        "Id": "MpdXsELpE",
+                        "Name": {
+                            "Family": "Greathouse",
+                            "Given": "Paul"
+                        }
+                    },
+                    "Organisation": {
+                        "Id": "iwvEhheZE",
+                        "Name": "iWEkXHcka",
+                        "Country": {
+                            "-code": "GBR",
+                            "#text": "KY"
+                        }
+                    },
+                    "Start": {
+                        "BibNumber": "4",
+                        "StartTime": "2020-01-15",
+                        "ControlCard": "68236"
+                    }
+                }
+            },
+            "ClassStart2": {
+                "Class": {
+                    "Id": "Kbanimzsu",
+                    "Name": "oqeGAqNWk"
+                },
+                "Course": {
+                    "Length": "288",
+                    "Climb": "569"
+                },
+                "StartName": "StartName2",
+                "PersonStart": [{
+                        "EntryId": "1790",
+                        "Person": {
+                            "Id": "duhOJPwjv",
+                            "Name": {
+                                "Family": "Higley",
+                                "Given": "Morris"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "qQtLBUPuT",
+                            "Name": "EkULeDLqs",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "GA"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "9",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "25099"
+                        }
+                    },
+                    {
+                        "EntryId": "4944",
+                        "Person": {
+                            "Id": "YYxvItogH",
+                            "Name": {
+                                "Family": "Pulley",
+                                "Given": "Charlie"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "CJNNViFlI",
+                            "Name": "xqbUKhvWZ",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "GH"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "6",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "17697"
+                        }
+                    }
+                ]
+            },
+            "ClassStart3": {
+                "Class": {
+                    "Id": "kflUCKLxB",
+                    "Name": "fjamFWdDt"
+                },
+                "Course": {
+                    "Length": "1683",
+                    "Climb": "388"
+                },
+                "StartName": "StartName3",
+                "PersonStart": {
+                    "EntryId": "3087",
+                    "Person": {
+                        "Id": "oAMZTGyqj",
+                        "Name": {
+                            "Family": "Miller",
+                            "Given": "Chance"
+                        }
+                    },
+                    "Organisation": {
+                        "Id": "gtwUkeEqi",
+                        "Name": "CJQlFZuvZ",
+                        "Country": {
+                            "-code": "GBR",
+                            "#text": "NZ"
+                        }
+                    },
+                    "Start": {
+                        "BibNumber": "6",
+                        "StartTime": "2020-01-15",
+                        "ControlCard": "73418"
+                    }
+                }
+            },
+            "ClassStart4": {
+                "Class": {
+                    "Id": "SgflMiqiK",
+                    "Name": "BBTQhBbPh"
+                },
+                "Course": {
+                    "Length": "1923",
+                    "Climb": "338"
+                },
+                "StartName": "StartName4",
+                "PersonStart": [{
+                        "EntryId": "6477",
+                        "Person": {
+                            "Id": "WCHGqOxVn",
+                            "Name": {
+                                "Family": "Kessel",
+                                "Given": "Tracey"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "PzDUpZNmN",
+                            "Name": "LaXWgjocA",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "QA"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "4",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "55805"
+                        }
+                    },
+                    {
+                        "EntryId": "9201",
+                        "Person": {
+                            "Id": "VTxqVCkot",
+                            "Name": {
+                                "Family": "Cooper",
+                                "Given": "Kurt"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "jtlCospVn",
+                            "Name": "AizfPbwtb",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "BA"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "0",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "95938"
+                        }
+                    },
+                    {
+                        "EntryId": "9505",
+                        "Person": {
+                            "Id": "BhsEpCpjx",
+                            "Name": {
+                                "Family": "Holt",
+                                "Given": "Melva"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "IfpLmiKYZ",
+                            "Name": "fcIcwDaUL",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "AF"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "10",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "39497"
+                        }
+                    },
+                    {
+                        "EntryId": "3831",
+                        "Person": {
+                            "Id": "lCmVqnyAI",
+                            "Name": {
+                                "Family": "Mccomas",
+                                "Given": "Leo"
+                            }
+                        },
+                        "Organisation": {
+                            "Id": "ZgnPPjDeq",
+                            "Name": "fttHTdvcE",
+                            "Country": {
+                                "-code": "GBR",
+                                "#text": "GE"
+                            }
+                        },
+                        "Start": {
+                            "BibNumber": "2",
+                            "StartTime": "2020-01-15",
+                            "ControlCard": "34340"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "#omit-xml-declaration": "yes"
+}

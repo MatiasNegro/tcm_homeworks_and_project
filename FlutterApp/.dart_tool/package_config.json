@@ -140,6 +140,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "open_file",
+      "rootUri": "file:///Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/open_file-3.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1",
       "packageUri": "lib/",
@@ -308,7 +314,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-05-23T13:54:48.312144Z",
+  "generated": "2022-05-24T14:39:32.270005Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }
