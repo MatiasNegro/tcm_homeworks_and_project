@@ -1,0 +1,185 @@
+<StartList xmlns="http://www.orienteering.org/datastandard/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" iofVersion="3.0" createTime="&lt;built-in method now of type object at 0x00007FF8F45F0F10&gt;" creator="SimulationSoftware"><Event>
+    <Name>gwmEjG</Name>
+    <StartTime>
+        <Date>2020-01-10</Date>
+        <Time>22:56:27</Time>
+    </StartTime>
+    <EndTime>
+        <Date>2020-01-01</Date>
+        <Time>10:41:06</Time>
+    </EndTime>
+</Event><StartClasses><ClassStart0><Class>
+    <Id>xYSram</Id>
+    <Name>qjCkqy</Name>
+</Class><Course>
+    <Length>1031</Length>
+    <Climb>57</Climb>
+</Course><StartName>StartName0</StartName><PersonStart><EntryId>8094</EntryId><Person>
+    <Id>wmfokm</Id>
+    <Name>
+        <Family>Martinez</Family>
+        <Given>Peter</Given>
+    </Name>
+</Person><Organisation>
+    <Id>QSKfZP</Id>
+    <Name>TrHESk</Name>
+    <Country code="GBR">ST</Country>
+</Organisation><Start><BibNumber>8</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>42073</ControlCard></Start></PersonStart></ClassStart0><ClassStart1><Class>
+    <Id>onPNSo</Id>
+    <Name>AUMPqI</Name>
+</Class><Course>
+    <Length>575</Length>
+    <Climb>832</Climb>
+</Course><StartName>StartName1</StartName><PersonStart><EntryId>7277</EntryId><Person>
+    <Id>shnkzJ</Id>
+    <Name>
+        <Family>Montejano</Family>
+        <Given>Harry</Given>
+    </Name>
+</Person><Organisation>
+    <Id>TfyNWX</Id>
+    <Name>yjwiKe</Name>
+    <Country code="GBR">NU</Country>
+</Organisation><Start><BibNumber>8</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>73585</ControlCard></Start></PersonStart></ClassStart1><ClassStart2><Class>
+    <Id>EfkAVv</Id>
+    <Name>mFtwbR</Name>
+</Class><Course>
+    <Length>842</Length>
+    <Climb>65</Climb>
+</Course><StartName>StartName2</StartName><PersonStart><EntryId>5547</EntryId><Person>
+    <Id>djKGux</Id>
+    <Name>
+        <Family>Etherington</Family>
+        <Given>Darlene</Given>
+    </Name>
+</Person><Organisation>
+    <Id>ChiDZn</Id>
+    <Name>fjLeIG</Name>
+    <Country code="GBR">PA</Country>
+</Organisation><Start><BibNumber>5</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>96152</ControlCard></Start></PersonStart><PersonStart><EntryId>7965</EntryId><Person>
+    <Id>zDxksm</Id>
+    <Name>
+        <Family>Abreu</Family>
+        <Given>Blaine</Given>
+    </Name>
+</Person><Organisation>
+    <Id>LRVtlD</Id>
+    <Name>ROuuCx</Name>
+    <Country code="GBR">TM</Country>
+</Organisation><Start><BibNumber>7</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>18440</ControlCard></Start></PersonStart><PersonStart><EntryId>2791</EntryId><Person>
+    <Id>nRuvWz</Id>
+    <Name>
+        <Family>Erb</Family>
+        <Given>Michael</Given>
+    </Name>
+</Person><Organisation>
+    <Id>pWgcYU</Id>
+    <Name>dzdHRR</Name>
+    <Country code="GBR">BB</Country>
+</Organisation><Start><BibNumber>5</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>46227</ControlCard></Start></PersonStart><PersonStart><EntryId>7706</EntryId><Person>
+    <Id>yunrKe</Id>
+    <Name>
+        <Family>Mills</Family>
+        <Given>Dolly</Given>
+    </Name>
+</Person><Organisation>
+    <Id>nphInK</Id>
+    <Name>muqzyV</Name>
+    <Country code="GBR">NE</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>29011</ControlCard></Start></PersonStart></ClassStart2><ClassStart3><Class>
+    <Id>lrFkor</Id>
+    <Name>kmyfpd</Name>
+</Class><Course>
+    <Length>1023</Length>
+    <Climb>139</Climb>
+</Course><StartName>StartName3</StartName><PersonStart><EntryId>6809</EntryId><Person>
+    <Id>MDIWcU</Id>
+    <Name>
+        <Family>Carpentier</Family>
+        <Given>Florine</Given>
+    </Name>
+</Person><Organisation>
+    <Id>uVpyzL</Id>
+    <Name>hwjxzK</Name>
+    <Country code="GBR">NG</Country>
+</Organisation><Start><BibNumber>2</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>89813</ControlCard></Start></PersonStart><PersonStart><EntryId>2232</EntryId><Person>
+    <Id>fKMmmA</Id>
+    <Name>
+        <Family>Luckey</Family>
+        <Given>Margaret</Given>
+    </Name>
+</Person><Organisation>
+    <Id>uljCxr</Id>
+    <Name>iTdWbj</Name>
+    <Country code="GBR">PK</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>99172</ControlCard></Start></PersonStart><PersonStart><EntryId>1052</EntryId><Person>
+    <Id>zsbaaC</Id>
+    <Name>
+        <Family>Dixon</Family>
+        <Given>Dorothy</Given>
+    </Name>
+</Person><Organisation>
+    <Id>BcrkIo</Id>
+    <Name>VpSVtG</Name>
+    <Country code="GBR">RE</Country>
+</Organisation><Start><BibNumber>6</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>70193</ControlCard></Start></PersonStart><PersonStart><EntryId>5281</EntryId><Person>
+    <Id>qSnnaV</Id>
+    <Name>
+        <Family>Grigsby</Family>
+        <Given>Danny</Given>
+    </Name>
+</Person><Organisation>
+    <Id>BYZJSk</Id>
+    <Name>IUsFrT</Name>
+    <Country code="GBR">LC</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>65804</ControlCard></Start></PersonStart><PersonStart><EntryId>7944</EntryId><Person>
+    <Id>XAmgxI</Id>
+    <Name>
+        <Family>Booth</Family>
+        <Given>Kim</Given>
+    </Name>
+</Person><Organisation>
+    <Id>PeTaxP</Id>
+    <Name>YYUypr</Name>
+    <Country code="GBR">SG</Country>
+</Organisation><Start><BibNumber>2</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>38080</ControlCard></Start></PersonStart></ClassStart3><ClassStart4><Class>
+    <Id>TKzDiS</Id>
+    <Name>wWUdCS</Name>
+</Class><Course>
+    <Length>909</Length>
+    <Climb>187</Climb>
+</Course><StartName>StartName4</StartName><PersonStart><EntryId>4794</EntryId><Person>
+    <Id>ezjiGv</Id>
+    <Name>
+        <Family>Campos</Family>
+        <Given>Wanda</Given>
+    </Name>
+</Person><Organisation>
+    <Id>aywrwI</Id>
+    <Name>LFygSG</Name>
+    <Country code="GBR">MG</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>65719</ControlCard></Start></PersonStart></ClassStart4></StartClasses></StartList>

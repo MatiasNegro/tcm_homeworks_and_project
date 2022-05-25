@@ -203,4 +203,5 @@ def uploadFiles(identityToken):
         side='top'
     )
 
+    print(identityToken)
     root.mainloop()
