@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:refresh_indicator_custom/refresh_indicator_custom.dart';
 
+var flag = true;
 void main() => runApp(new Home());
 
 class Home extends StatelessWidget {
@@ -111,11 +112,19 @@ class _MyHomePageState extends State<MyHomePage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 0.0 : 0.0,
+          opacity: _getOpacity(),
           child: CircularProgressIndicator(),
         ),
       ),
     );
+  }
+
+  double _getOpacity() {
+    if (isPerformingRequest && flag) {
+      flag = false;
+      return 1.0;
+    }
+    return 0.0;
   }
 
   @override

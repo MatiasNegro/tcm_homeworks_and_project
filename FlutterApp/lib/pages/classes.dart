@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:FlutterApp/services/requests.dart';
 
+var flag = true;
+
 class Class extends StatelessWidget {
   late String idRace;
   late String raceName;
@@ -94,11 +96,19 @@ class _MyClassPageState extends State<MyClassPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 0.0 : 0.0,
+          opacity: _getOpacity(),
           child: CircularProgressIndicator(),
         ),
       ),
     );
+  }
+
+  double _getOpacity() {
+    if (isPerformingRequest && flag) {
+      flag = false;
+      return 1.0;
+    }
+    return 0.0;
   }
 
   @override

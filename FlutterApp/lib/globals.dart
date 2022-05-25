@@ -10,3 +10,7 @@ const apiUrlResults =
 
 const apiUrlDownloadFile =
     'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/download';
+
+const apiUrlStartListClasses = '';
+
+const apiUrlStartListPlayers = '';

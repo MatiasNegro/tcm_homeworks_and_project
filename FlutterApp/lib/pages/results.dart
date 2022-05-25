@@ -94,7 +94,7 @@ class _MyResultsPageState extends State<MyResultsPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 0.0 : 0.0,
+          opacity: isPerformingRequest ? 1.0 : 0.0,
           child: CircularProgressIndicator(),
         ),
       ),
