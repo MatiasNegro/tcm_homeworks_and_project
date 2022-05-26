@@ -2,6 +2,8 @@ import logging
 import json
 import boto3
 from boto3.dynamodb.conditions import Key
+import pandas
+import matplotlib
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -153,7 +155,40 @@ def lambda_handler(event, context):
             response['body'] = '404'
         else:
             response['body'] = grid
-        
+    
+    elif resource == 'split_time_jpeg':
+        id = event["queryStringParameters"]["id"]
+        cl = event["queryStringParameters"]["class"]
+        r = ddb_client.scan(
+            TableName='DBresults',
+            AttributesToGet=[
+                'event',
+                'ClassResults'
+            ],
+        )
+        for i in r['Items']:
+            if (i['event']['S'] == id):
+                for k in i['ClassResults']['M']:
+                    if (i['ClassResults']['M'][k]['M']['Class']['M']['Id']['S'] == cl):
+                        i=0
+                        for p in i['ClassResults']['M'][k]['M']:
+                            i+=1
+                            if 'PersonResult' in p:
+                                person = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']
+                                splittimes = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTimes']['M']
+                                dict[i] = {
+                                    'player' : str(person),
+                                    'splits' : str(splittimes)
+                                }
+        string = str(dict)
+        dict_json = json.dumps(dict, indent=4)
+        dict_json = dict_json.split(', "ResponseMetadata":')
+        dict_json = dict_json[0]
+        if dict=={}:
+            response['body'] = 'Error 404: Race not found'
+        else:
+            response['body'] = string
+
     else:
         response['body'] = 'Error 404: resource not found'
         
