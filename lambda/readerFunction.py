@@ -174,20 +174,26 @@ def lambda_handler(event, context):
                         for p in i['ClassResults']['M'][k]['M']:
                             i+=1
                             if 'PersonResult' in p:
-                                person = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']
-                                splittimes = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTimes']['M']
-                                dict[i] = {
-                                    'player' : str(person),
-                                    'splits' : str(splittimes)
-                                }
-        string = str(dict)
-        dict_json = json.dumps(dict, indent=4)
-        dict_json = dict_json.split(', "ResponseMetadata":')
-        dict_json = dict_json[0]
-        if dict=={}:
-            response['body'] = 'Error 404: Race not found'
-        else:
-            response['body'] = string
+                                person = i['ClassResults']['M'][k]['M'][p]['M']['Person']
+                                k=0
+                                for split in i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']:
+                                    if 'SplitTime' in split:
+                                        print(i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTime'+k]['M'])
+        '''
+                                        #splittimes = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTimes']['M']
+                                    dict[i] = {
+                                        'player' : str(person),
+                                        'splits' : str(splittimes)
+                                    }
+            string = str(dict)
+            dict_json = json.dumps(dict, indent=4)
+            dict_json = dict_json.split(', "ResponseMetadata":')
+            dict_json = dict_json[0]
+            if dict=={}:
+                response['body'] = 'Error 404: Race not found'
+            else:
+                response['body'] = string
+        '''
 
     else:
         response['body'] = 'Error 404: resource not found'
