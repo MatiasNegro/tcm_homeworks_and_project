@@ -123,7 +123,8 @@ def lambda_handler(event, context):
 
                 # pulizia del file dai metadati presenti all'inizio aggiunti dalla POST request
                 data = file.split('\r\n\r\n')
-                data.pop(0)
+                if len(data)>1:
+                    data.pop(0)
                 content = data[0]
 
                 # conversione da string ad xml
