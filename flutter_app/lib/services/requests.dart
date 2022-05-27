@@ -70,7 +70,7 @@ class Request {
           options: Options(method: 'GET', responseType: ResponseType.plain),
           queryParameters: {'filename': raceId});
       var myFile = await File(dir.path + '/$raceId.xml').create();
-      myFile.writeAsString(response.data);
+      await myFile.writeAsString(response.data);
       toReturn = true;
     } catch (e) {
       toReturn = false;
@@ -91,7 +91,7 @@ class Request {
       for (int i = 1; i < myJson.length + 1; i++) {
         resultsList.add(myJson['$i']);
       }
-      
+
       return resultsList;
     } else {
       // If the server did not return a 200 OK response,
