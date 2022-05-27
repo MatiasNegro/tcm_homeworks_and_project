@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/requests.dart';
 
+bool flag = true;
+
 class StartGrid extends StatelessWidget {
   late String idRace;
   late String className;
@@ -28,7 +30,8 @@ class MyStartGridPage extends StatefulWidget {
   }
 
   @override
-  _MyStartGridPageState createState() => _MyStartGridPageState(idRace, className);
+  _MyStartGridPageState createState() =>
+      _MyStartGridPageState(idRace, className);
 }
 
 class _MyStartGridPageState extends State<MyStartGridPage> {
@@ -94,11 +97,19 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
+          opacity: _getOpacity(),
           child: CircularProgressIndicator(),
         ),
       ),
     );
+  }
+
+  double _getOpacity() {
+    if (isPerformingRequest && flag) {
+      flag = false;
+      return 1.0;
+    }
+    return 0.0;
   }
 
   @override
@@ -112,7 +123,7 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
         body: ListView.builder(
           itemCount: items.length + 1,
           itemBuilder: (context, index) {
-            if (index == items.length) {
+            if (index >= items.length - 1) {
               return _buildProgressIndicator();
             } else {
               var toText = items[index];
@@ -129,24 +140,7 @@ class _MyStartGridPageState extends State<MyStartGridPage> {
           },
           controller: _scrollController,
         ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.dataset),
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (_) => imageDialog('images/bird.jpg'));
-          },
-        ),
       ),
     );
-  }
-
-  imageDialog(String s) {
-    return CupertinoAlertDialog(
-        content: Container(
-      height: 250.0,
-      width: 250.0,
-      child: Image.asset('images/bird.jpg'),
-    ));
   }
 }

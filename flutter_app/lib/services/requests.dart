@@ -91,7 +91,7 @@ class Request {
       for (int i = 1; i < myJson.length + 1; i++) {
         resultsList.add(myJson['$i']);
       }
-      print(resultsList);
+      
       return resultsList;
     } else {
       // If the server did not return a 200 OK response,
@@ -115,6 +115,25 @@ class Request {
         resultsList.add(myJson['$i']);
       }
       return resultsList;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load StartGrid names, status code: ' +
+          response.statusCode.toString());
+    }
+  }
+
+  static getSplitTimesImage(idRace, className) async {
+    final myQueryParameters = {'id': idRace, 'class': className};
+    final myUrl = apiImageEncoded + '?id=' + idRace + '&class=' + className;
+    final response = await http.get(Uri.parse(myUrl));
+    if (response.statusCode == 200) {
+      String image_encoded = response.body;
+      if (response.body is String) {
+        return image_encoded;
+      } else {
+        return '';
+      }
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.

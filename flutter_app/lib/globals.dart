@@ -13,3 +13,6 @@ const apiUrlDownloadFile =
 
 const apiUrlStartListPlayers =
     'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/download_start_list';
+
+const apiImageEncoded =
+    'https://x4d1kgdj83.execute-api.us-east-1.amazonaws.com/default/split_time_jpeg';

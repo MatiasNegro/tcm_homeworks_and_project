@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/requests.dart';
 
+String image = '';
+var flag = true;
+
 class Results extends StatelessWidget {
   late String idRace;
   late String className;
@@ -96,11 +99,19 @@ class _MyResultsPageState extends State<MyResultsPage> {
           EdgeInsets.symmetric(horizontal: horSize / 2, vertical: verSize / 2),
       child: Center(
         child: Opacity(
-          opacity: isPerformingRequest ? 1.0 : 0.0,
+          opacity: _getOpacity(),
           child: CircularProgressIndicator(),
         ),
       ),
     );
+  }
+
+  double _getOpacity() {
+    if (isPerformingRequest && flag) {
+      flag = false;
+      return 1.0;
+    }
+    return 0.0;
   }
 
   @override
@@ -114,7 +125,7 @@ class _MyResultsPageState extends State<MyResultsPage> {
         body: ListView.builder(
           itemCount: items.length + 1,
           itemBuilder: (context, index) {
-            if (index == items.length) {
+            if (index >= items.length - 1) {
               return _buildProgressIndicator();
             } else {
               var toText = items[index];
@@ -146,21 +157,27 @@ class _MyResultsPageState extends State<MyResultsPage> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.dataset),
-          onPressed: () {
-            showDialog(context: context, builder: (_) => imageDialog());
+          onPressed: () async {
+            await _dialogCall(
+                context, await Request.getSplitTimesImage(idRace, className));
           },
         ),
       ),
     );
   }
 
-  imageDialog() {
-    return CupertinoAlertDialog(
-      content: Container(
-          height: 250.0,
-          width: 250.0,
-          child: Image.network(
-              'https://cdn.pixabay.com/photo/2020/02/06/09/39/summer-4823612_960_720.jpg')),
-    );
+  Future<void> _dialogCall(BuildContext context, String s) {
+    var bytes = s;
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return CupertinoAlertDialog(
+            content: Container(
+              height: 250.0,
+              width: 250.0,
+              child: Image.memory(base64Decode(bytes)),
+            ),
+          );
+        });
   }
 }
