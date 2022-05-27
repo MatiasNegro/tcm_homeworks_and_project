@@ -67,5 +67,3 @@ def lambda_handler(event, context):
     
     #Insert of the Item inside the db
     response = table.put_item(Item = {**{"event": name}, **to_db_dict})
-    
-    print(response)
