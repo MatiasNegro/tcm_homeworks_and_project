@@ -88,7 +88,7 @@ class Request {
       // then parse the JSON.
       List resultsList = [];
       var myJson = jsonDecode(response.body) as Map;
-      for (int i = 0; i < myJson.length; i++) {
+      for (int i = 1; i < myJson.length + 1; i++) {
         resultsList.add(myJson['$i']);
       }
       print(resultsList);
@@ -111,7 +111,7 @@ class Request {
       List resultsList = [];
       var myJson = jsonDecode(response.body) as Map;
 
-      for (int i = 0; i < myJson.length; i++) {
+      for (int i = 1; i < myJson.length + 1; i++) {
         resultsList.add(myJson['$i']);
       }
       return resultsList;

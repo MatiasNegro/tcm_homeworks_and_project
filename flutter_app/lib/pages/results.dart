@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/requests.dart';
@@ -145,21 +147,20 @@ class _MyResultsPageState extends State<MyResultsPage> {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.dataset),
           onPressed: () {
-            showDialog(
-                context: context,
-                builder: (_) => imageDialog('images/bird.jpg'));
+            showDialog(context: context, builder: (_) => imageDialog());
           },
         ),
       ),
     );
   }
 
-  imageDialog(String s) {
+  imageDialog() {
     return CupertinoAlertDialog(
-        content: Container(
-      height: 250.0,
-      width: 250.0,
-      child: Image.asset('images/bird.jpg'),
-    ));
+      content: Container(
+          height: 250.0,
+          width: 250.0,
+          child: Image.network(
+              'https://cdn.pixabay.com/photo/2020/02/06/09/39/summer-4823612_960_720.jpg')),
+    );
   }
 }

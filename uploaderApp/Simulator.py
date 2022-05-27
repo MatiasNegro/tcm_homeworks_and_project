@@ -123,13 +123,15 @@ def simulation(num):
                 result.find("Status").text = "OK"
 
                 # SplitTimes generation
+                index_split_times = 0
                 split_time_list = []
                 for j in range(0, 5):
                     split = copy.deepcopy(split_time_base)
                     split.find("ControlCode").text = id_generator()
-                    split.find("Time").text = str(
-                        randomtimestamp.randomtimestamp())[11:]
+                    index_split_times = index_split_times + ran.randint(50,250)
+                    split.find("Time").text = str(index_split_times)
                     split_time_list.append(split)
+                index_split_times = 0
 
                 # Route generation
                 route = copy.deepcopy(route_base)
