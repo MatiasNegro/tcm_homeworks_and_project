@@ -2,8 +2,9 @@ import logging
 import json
 import boto3
 from boto3.dynamodb.conditions import Key
-import pandas
-import matplotlib
+import matplotlib.pyplot as plt
+import io
+import base64
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -118,7 +119,6 @@ def lambda_handler(event, context):
                     if (i['ClassResults']['M'][k]['M']['Class']['M']['Id']['S'] == cl):
                         for p in i['ClassResults']['M'][k]['M']:
                             if 'PersonResult' in p:
-                                print(i['ClassResults']['M'][k]['M'][p]['M'])
                                 idPlayer = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']['Id']['S']
                                 surname = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']['Name']['M']['Family']['S']
                                 name = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']['Name']['M']['Given']['S']
@@ -155,8 +155,9 @@ def lambda_handler(event, context):
             response['body'] = '404'
         else:
             response['body'] = grid
-    
+            
     elif resource == 'split_time_jpeg':
+        dict={}
         id = event["queryStringParameters"]["id"]
         cl = event["queryStringParameters"]["class"]
         r = ddb_client.scan(
@@ -170,33 +171,66 @@ def lambda_handler(event, context):
             if (i['event']['S'] == id):
                 for k in i['ClassResults']['M']:
                     if (i['ClassResults']['M'][k]['M']['Class']['M']['Id']['S'] == cl):
-                        i=0
+                        j=0
                         for p in i['ClassResults']['M'][k]['M']:
-                            i+=1
                             if 'PersonResult' in p:
-                                person = i['ClassResults']['M'][k]['M'][p]['M']['Person']
-                                k=0
+                                person = i['ClassResults']['M'][k]['M'][p]['M']['Person']['M']
+                                position = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['Position']['S']
+                                h=0
+                                listSplit = []
                                 for split in i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']:
                                     if 'SplitTime' in split:
-                                        print(i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTime'+k]['M'])
-        '''
-                                        #splittimes = i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTimes']['M']
-                                    dict[i] = {
-                                        'player' : str(person),
-                                        'splits' : str(splittimes)
-                                    }
-            string = str(dict)
-            dict_json = json.dumps(dict, indent=4)
-            dict_json = dict_json.split(', "ResponseMetadata":')
-            dict_json = dict_json[0]
-            if dict=={}:
-                response['body'] = 'Error 404: Race not found'
-            else:
-                response['body'] = string
-        '''
-
+                                        split = int(i['ClassResults']['M'][k]['M'][p]['M']['Result']['M']['SplitTime'+str(h)]['M']['Time']['S'])
+                                        listSplit.append(split)
+                                        h+=1
+                                dict[j]={
+                                    'person' : {
+                                        'id' : person['Id']['S'],
+                                        'Name' : person['Name']['M']['Given']['S'],
+                                        'Family' : person['Name']['M']['Family']['S'],
+                                        'Position' : position
+                                    },
+                                    'listSplit' : listSplit
+                                }
+                                j+=1
+        
+        lenx = len(dict[0]['listSplit'])
+        x = [*range(1 , lenx+1, 1)]
+        
+        for p in dict:
+            if dict[p]['person']['Position'] == str(1):
+                splitFirst = dict[p]['listSplit']
+        
+        if len(splitFirst)==0:
+            print('hai fuckappato')
+        
+        id = 'event'
+        cl = 'class'
+        plt.title('Race: '+id+'\nClass: '+cl)
+        plt.ylabel('Time difference')
+        plt.xlabel('Control')
+        for person in dict:
+            split = dict[person]['listSplit']
+            y = []
+            zip_object = zip(split, splitFirst)
+            for list1_i, list2_i in zip_object:
+                y.append(list1_i-list2_i)
+        
+            plt.plot(x, y, linestyle="", marker="o")
+            plt.plot(x, y, color=plt.gca().lines[-1].get_color())
+            plt.ylim(max(y)+10, 0)
+            
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png')
+        buf = buffer.getvalue()
+        response['body'] = base64.b64encode(buf).decode('utf-8')
+        response['headers'] = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': 'true',
+            'Content-Type': 'img/png'
+        }
+        
     else:
         response['body'] = 'Error 404: resource not found'
-        
             
     return response
