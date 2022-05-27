@@ -117,9 +117,25 @@ class _MyResultsPageState extends State<MyResultsPage> {
             } else {
               var toText = items[index];
               var id = toText['idPlayer'];
+              var name = toText['name'];
+              var surname = toText['surname'];
               return ListTile(
-                title: Text(id),
-                leading: const Icon(Icons.person),
+                title: Text(name + ' ' + surname),
+                subtitle: Text(id),
+                leading: Container(
+                  height: 35.0,
+                  width: 35.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.lightBlue,
+                  ),
+                  child: Center(
+                    child: Text(
+                      (index + 1).toString(),
+                      style: TextStyle(fontSize: 22, color: Colors.white),
+                    ),
+                  ),
+                ),
                 onTap: () {},
               );
             }

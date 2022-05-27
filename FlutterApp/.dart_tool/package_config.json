@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "app_settings",
+      "rootUri": "file:///Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/app_settings-4.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "args",
       "rootUri": "file:///Users/matiasnegro/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.3.1",
       "packageUri": "lib/",
@@ -320,7 +326,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-05-24T15:53:53.024977Z",
+  "generated": "2022-05-25T19:54:24.900324Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

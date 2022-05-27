@@ -20,11 +20,17 @@ def class_result_parser(root):
     r_l.append(event)
     index_class : int = 0
     index_person : int = 0
+    index_split_time : int = 0
     for i in root.findall("ClassResult"):
         i.tag = "ClassResult" + str(index_class)
         index_class += 1
         for j in i.findall("PersonResult"):
             j.tag = "PersonResult" + str(index_person)
+            split_times = j.find('Result').findall('SplitTime')
+            for k in split_times:
+                k.tag = "SplitTime" + str(index_split_time)
+                index_split_time += 1
+            index_split_time = 0
             index_person += 1
         index_person : int = 0
         c_r_s.append(i)

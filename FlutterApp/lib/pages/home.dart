@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:FlutterApp/pages/startList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:FlutterApp/globals.dart';
@@ -68,41 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  void _showActionSheet(BuildContext context, raceId, raceName) {
-    showCupertinoModalPopup<void>(
-      context: context,
-      builder: (BuildContext myContext) => CupertinoActionSheet(
-        actions: <CupertinoActionSheetAction>[
-          CupertinoActionSheetAction(
-            /// This parameter indicates the action would be a default
-            /// defualt behavior, turns the action's text to bold text.
-            isDefaultAction: true,
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      settings: RouteSettings(arguments: [raceId, raceName]),
-                      builder: (context) => new StartList()));
-              Navigator.pop(myContext);
-            },
-            child: const Text('start list'),
-          ),
-          CupertinoActionSheetAction(
-            isDefaultAction: true,
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      settings: RouteSettings(arguments: [raceId, raceName]),
-                      builder: (context) => new Class()));
-              Navigator.pop(myContext);
-            },
-            child: const Text('result list'),
-          ),
-        ],
-      ),
-    );
-  }
+  
 
   Widget _buildProgressIndicator() {
     double horSize = MediaQuery.of(context).size.width / 2;
@@ -172,7 +137,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onTap: () {
-                  _showActionSheet(context, raceId, raceName);
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      settings: RouteSettings(arguments: [raceId, raceName]),
+                      builder: (context) => new Class()));
                 },
               );
             }

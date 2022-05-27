@@ -2,6 +2,7 @@ import 'package:FlutterApp/pages/results.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:FlutterApp/services/requests.dart';
+import 'startGrid.dart';
 
 var flag = true;
 
@@ -111,6 +112,42 @@ class _MyClassPageState extends State<MyClassPage> {
     return 0.0;
   }
 
+  void _showActionSheet(BuildContext context, raceId, id) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext myContext) => CupertinoActionSheet(
+        actions: <CupertinoActionSheetAction>[
+          CupertinoActionSheetAction(
+            /// This parameter indicates the action would be a default
+            /// defualt behavior, turns the action's text to bold text.
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      settings: RouteSettings(arguments: [raceId, id]),
+                      builder: (context) => new StartGrid()));
+              Navigator.pop(myContext);
+            },
+            child: const Text('start list'),
+          ),
+          CupertinoActionSheetAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      settings: RouteSettings(arguments: [raceId, id]),
+                      builder: (context) => new Results()));
+              Navigator.pop(myContext);
+            },
+            child: const Text('result list'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -133,12 +170,7 @@ class _MyClassPageState extends State<MyClassPage> {
                 subtitle: Text(name),
                 leading: const Icon(Icons.people_alt_rounded),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          settings:
-                              RouteSettings(arguments: [idRace, toText['id']]),
-                          builder: (context) => Results()));
+                  _showActionSheet(context, idRace, id);
                 },
               );
             }

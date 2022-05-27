@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:FlutterApp/pages/startList.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../globals.dart';
 import 'package:open_file/open_file.dart';
+import 'package:app_settings/app_settings.dart';
 
 class Request {
   static Future<List> raceNameRequest() async {
@@ -56,11 +56,10 @@ class Request {
       var status = await Permission.storage.request();
       if (status == PermissionStatus.granted) {
       } else if (status == PermissionStatus.denied) {
-        print(
-            'Permission denied. Show a dialog and again ask for the permission');
+        AppSettings.openInternalStorageSettings();
         return false;
       } else if (status == PermissionStatus.permanentlyDenied) {
-        print('Take the user to the settings page.');
+        AppSettings.openInternalStorageSettings();
         await openAppSettings();
       }
 
@@ -80,17 +79,14 @@ class Request {
 
   static getResultsOfRaceClass(idRace, className) async {
     final myQueryParameters = {'id': idRace, 'class': className};
-    print(idRace);
-    print(className);
     final myUrl = apiUrlResults + '?id=' + idRace + '&class=' + className;
-    print(myUrl);
     final response = await http.get(Uri.parse(myUrl));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
       List resultsList = [];
       var myJson = jsonDecode(response.body) as Map;
-      print(myJson);
+
       for (int i = 0; i < myJson.length; i++) {
         resultsList.add(myJson['$i']);
       }
@@ -102,8 +98,24 @@ class Request {
     }
   }
 
-  static getStartListRequest(idRace) async {
-    ;
-    return 0;
+  static getStartListGrid(idRace, className) async {
+    final myQueryParameters = {'id': idRace, 'class': className};
+    final myUrl = apiUrlResults + '?id=' + idRace + '&class=' + className;
+    final response = await http.get(Uri.parse(myUrl));
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      List resultsList = [];
+      var myJson = jsonDecode(response.body) as Map;
+
+      for (int i = 0; i < myJson.length; i++) {
+        resultsList.add(myJson['$i']);
+      }
+      return resultsList;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load results names');
+    }
   }
 }
