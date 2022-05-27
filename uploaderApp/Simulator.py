@@ -10,7 +10,6 @@ import copy
 import threading
 import StartList_Sim as SS
 
-
 # Base xmls
 start_xml = ET.fromstring("<ResultList></ResultList>")
 person_result_xml = ET.fromstring("<PersonResult></PersonResult>")
@@ -213,5 +212,3 @@ def simulation(num):
         #multithreading
 
         my_thread = threading.Thread(target= SS.start_list_sim(el_tree.getroot()))
-
-simulation(1)
