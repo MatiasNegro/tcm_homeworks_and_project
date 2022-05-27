@@ -1,0 +1,149 @@
+<StartList xmlns="http://www.orienteering.org/datastandard/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" iofVersion="3.0" createTime="&lt;built-in method now of type object at 0x100a08968&gt;" creator="SimulationSoftware"><Event>
+    <Name>vpSwvg</Name>
+    <StartTime>
+        <Date>2020-01-10</Date>
+        <Time>04:33:36</Time>
+    </StartTime>
+    <EndTime>
+        <Date>2020-01-03</Date>
+        <Time>04:15:35</Time>
+    </EndTime>
+</Event><StartClasses><ClassStart0><Class>
+    <Id>KOEabc</Id>
+    <Name>RHPdKc</Name>
+</Class><Course>
+    <Length>232</Length>
+    <Climb>783</Climb>
+</Course><StartName>StartName0</StartName><PersonStart><EntryId>2397</EntryId><Person>
+    <Id>MNvwdm</Id>
+    <Name>
+        <Family>Betterton</Family>
+        <Given>Julia</Given>
+    </Name>
+</Person><Organisation>
+    <Id>Vrmlxx</Id>
+    <Name>KxhIef</Name>
+    <Country code="GBR">SD</Country>
+</Organisation><Start><BibNumber>7</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>11380</ControlCard></Start></PersonStart></ClassStart0><ClassStart1><Class>
+    <Id>nBjbhR</Id>
+    <Name>DZUbAV</Name>
+</Class><Course>
+    <Length>93</Length>
+    <Climb>853</Climb>
+</Course><StartName>StartName1</StartName><PersonStart><EntryId>2224</EntryId><Person>
+    <Id>GkuYQq</Id>
+    <Name>
+        <Family>Newton</Family>
+        <Given>Sarah</Given>
+    </Name>
+</Person><Organisation>
+    <Id>jvXygy</Id>
+    <Name>VQcOmk</Name>
+    <Country code="GBR">FI</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>69055</ControlCard></Start></PersonStart><PersonStart><EntryId>3685</EntryId><Person>
+    <Id>EPeVrP</Id>
+    <Name>
+        <Family>Hord</Family>
+        <Given>Isabel</Given>
+    </Name>
+</Person><Organisation>
+    <Id>oesilx</Id>
+    <Name>qExuDd</Name>
+    <Country code="GBR">BE</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>43185</ControlCard></Start></PersonStart><PersonStart><EntryId>5151</EntryId><Person>
+    <Id>tVzrfB</Id>
+    <Name>
+        <Family>Buskey</Family>
+        <Given>Gilberto</Given>
+    </Name>
+</Person><Organisation>
+    <Id>xhckUE</Id>
+    <Name>hFlTRU</Name>
+    <Country code="GBR">PF</Country>
+</Organisation><Start><BibNumber>10</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>18074</ControlCard></Start></PersonStart></ClassStart1><ClassStart2><Class>
+    <Id>FfuPfO</Id>
+    <Name>PpwEuM</Name>
+</Class><Course>
+    <Length>1861</Length>
+    <Climb>126</Climb>
+</Course><StartName>StartName2</StartName><PersonStart><EntryId>1156</EntryId><Person>
+    <Id>PBowjF</Id>
+    <Name>
+        <Family>Trundle</Family>
+        <Given>Loretta</Given>
+    </Name>
+</Person><Organisation>
+    <Id>KdKxJn</Id>
+    <Name>KouPjr</Name>
+    <Country code="GBR">FO</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>98429</ControlCard></Start></PersonStart><PersonStart><EntryId>1748</EntryId><Person>
+    <Id>EDxUtJ</Id>
+    <Name>
+        <Family>Wilson</Family>
+        <Given>Martha</Given>
+    </Name>
+</Person><Organisation>
+    <Id>jPfktm</Id>
+    <Name>wuGcXi</Name>
+    <Country code="GBR">TZ</Country>
+</Organisation><Start><BibNumber>9</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>71010</ControlCard></Start></PersonStart></ClassStart2><ClassStart3><Class>
+    <Id>LshbZt</Id>
+    <Name>mNFgnZ</Name>
+</Class><Course>
+    <Length>580</Length>
+    <Climb>366</Climb>
+</Course><StartName>StartName3</StartName><PersonStart><EntryId>7336</EntryId><Person>
+    <Id>dqvGFF</Id>
+    <Name>
+        <Family>Dix</Family>
+        <Given>Jeffery</Given>
+    </Name>
+</Person><Organisation>
+    <Id>HEYAQY</Id>
+    <Name>NuWJNz</Name>
+    <Country code="GBR">KN</Country>
+</Organisation><Start><BibNumber>4</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>86857</ControlCard></Start></PersonStart><PersonStart><EntryId>8683</EntryId><Person>
+    <Id>qIndgV</Id>
+    <Name>
+        <Family>Rider</Family>
+        <Given>Mary</Given>
+    </Name>
+</Person><Organisation>
+    <Id>DiZYFa</Id>
+    <Name>LFMGBs</Name>
+    <Country code="GBR">MU</Country>
+</Organisation><Start><BibNumber>7</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>76276</ControlCard></Start></PersonStart></ClassStart3><ClassStart4><Class>
+    <Id>HHgZGz</Id>
+    <Name>curaQU</Name>
+</Class><Course>
+    <Length>77</Length>
+    <Climb>309</Climb>
+</Course><StartName>StartName4</StartName><PersonStart><EntryId>5990</EntryId><Person>
+    <Id>RPMbvd</Id>
+    <Name>
+        <Family>Morris</Family>
+        <Given>Maria</Given>
+    </Name>
+</Person><Organisation>
+    <Id>bYkLtv</Id>
+    <Name>atjeTG</Name>
+    <Country code="GBR">NF</Country>
+</Organisation><Start><BibNumber>6</BibNumber>
+    <StartTime>2020-01-10</StartTime>
+    <ControlCard>90576</ControlCard></Start></PersonStart></ClassStart4></StartClasses></StartList>
