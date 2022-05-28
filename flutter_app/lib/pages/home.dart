@@ -67,8 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  
-
   Widget _buildProgressIndicator() {
     double horSize = MediaQuery.of(context).size.width / 2;
     double verSize = MediaQuery.of(context).size.height / 2;
@@ -137,11 +135,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onTap: () {
+                  flag = true;
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      settings: RouteSettings(arguments: [raceId, raceName]),
-                      builder: (context) => new Class()));
+                      context,
+                      MaterialPageRoute(
+                          settings:
+                              RouteSettings(arguments: [raceId, raceName]),
+                          builder: (context) => new Class()));
                 },
               );
             }
